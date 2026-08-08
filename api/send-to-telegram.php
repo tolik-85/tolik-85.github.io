@@ -15,6 +15,10 @@
 
 header('Content-Type: application/json; charset=utf-8');
 
+// Не показуємо текст PHP-помилок назовні (там шляхи сервера) — фронтенду
+// достатньо JSON; самі помилки все одно потрапляють у error-лог хостингу.
+ini_set('display_errors', '0');
+
 function respond($ok, $extra = []) {
     http_response_code($ok ? 200 : 400);
     echo json_encode(array_merge(['ok' => $ok], $extra), JSON_UNESCAPED_UNICODE);
