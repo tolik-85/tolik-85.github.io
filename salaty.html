@@ -23,9 +23,6 @@
   <link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Шрифти self-hosted (той самий origin) — preconnect не потрібен, лише
-       preload двох найчастіше вживаних файлів (кирилиця, вага 400), щоб
-       браузер почав качати їх ще до розбору fonts.css. -->
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/manrope-cyrillic.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/prata-cyrillic.woff2" crossorigin>
 
@@ -224,10 +221,6 @@
   </nav>
 </header>
 
-<!-- Нижня мобільна панель (<861px, header.css): 2 пункти — Меню (категорії
-     товарів) і Кошик. На десктопі display:none, приховано в CSS. Єдине місце
-     виклику категорій/кошика на мобільному — бургер шапки лишається тільки
-     для "іншого" (Акції/Доставка/Відгуки/Про нас/Контакти), без дублювання. -->
 <nav class="mobile-tabbar" aria-label="Мобільна навігація">
   <button type="button" class="mobile-tabbar__btn" id="mobileMenuButton" aria-haspopup="dialog">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
@@ -242,10 +235,6 @@
   </button>
 </nav>
 
-<!-- Мега-меню категорій (мобільне): плитка з фото на кожен пункт замість
-     текстового списку. Відкривається кнопкою "Меню" нижньої панелі
-     (.mobile-tabbar) — та сама #categoriesDrawer, той самий JS
-     (openDrawer/closeDrawer у common.js), лише інша розмітка панелі. -->
 <div class="drawer mega-menu" id="categoriesDrawer" role="dialog" aria-modal="true" aria-labelledby="categoriesDrawerTitle" hidden>
   <div class="drawer__backdrop" data-drawer-close></div>
   <div class="mega-menu__panel">
@@ -355,14 +344,6 @@
   </div>
 </div>
 
-<!-- Поп-ап головного меню (бургер шапки, <861px): плиткові пункти
-     (Меню/Акції/Доставка/Відгуки/Про нас/Контакти) замість вертикального
-     списку, що раніше розсував контент сторінки вниз (grid-template-rows
-     0fr→1fr у .main-nav). Той самий патерн, що й у #categoriesDrawer —
-     спливаюча по центру картка (.mega-menu__panel), той самий JS
-     (openDrawer/closeDrawer у common.js) — лише замість фото-плиток
-     категорій тут плитки з іконками (.mega-menu__tile-media--icon,
-     стилі в mobile-tabbar.css). -->
 <div class="drawer mega-menu" id="navDrawer" role="dialog" aria-modal="true" aria-labelledby="navDrawerTitle" hidden>
   <div class="drawer__backdrop" data-drawer-close></div>
   <div class="mega-menu__panel">
@@ -464,7 +445,7 @@
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="M6 6l12 12"/></svg>
     </button>
     <div class="product-popup__media">
-      <img id="productPopupImg" src="" alt="" width="460" height="460">
+      <img id="productPopupImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="460" height="460">
       <div class="product-card__badges" id="productPopupBadges"></div>
     </div>
     <div class="product-popup__info">

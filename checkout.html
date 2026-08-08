@@ -23,9 +23,6 @@
   <link rel="apple-touch-icon" href="/assets/images/icons/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Шрифти self-hosted (той самий origin) — preconnect не потрібен, лише
-       preload двох найчастіше вживаних файлів (кирилиця, вага 400), щоб
-       браузер почав качати їх ще до розбору fonts.css. -->
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/manrope-cyrillic.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/prata-cyrillic.woff2" crossorigin>
 
@@ -109,10 +106,6 @@
   </nav>
 </header>
 
-<!-- Нижня мобільна панель (<861px, header.css): 2 пункти — Меню (категорії
-     товарів) і Кошик. На десктопі display:none, приховано в CSS. Єдине місце
-     виклику категорій/кошика на мобільному — бургер шапки лишається тільки
-     для "іншого" (Акції/Доставка/Відгуки/Про нас/Контакти), без дублювання. -->
 <nav class="mobile-tabbar" aria-label="Мобільна навігація">
   <button type="button" class="mobile-tabbar__btn" id="mobileMenuButton" aria-haspopup="dialog">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
@@ -127,10 +120,6 @@
   </button>
 </nav>
 
-<!-- Мега-меню категорій (мобільне): плитка з фото на кожен пункт замість
-     текстового списку. Відкривається кнопкою "Меню" нижньої панелі
-     (.mobile-tabbar) — та сама #categoriesDrawer, той самий JS
-     (openDrawer/closeDrawer у common.js), лише інша розмітка панелі. -->
 <div class="drawer mega-menu" id="categoriesDrawer" role="dialog" aria-modal="true" aria-labelledby="categoriesDrawerTitle" hidden>
   <div class="drawer__backdrop" data-drawer-close></div>
   <div class="mega-menu__panel">
@@ -240,14 +229,6 @@
   </div>
 </div>
 
-<!-- Поп-ап головного меню (бургер шапки, <861px): плиткові пункти
-     (Меню/Акції/Доставка/Відгуки/Про нас/Контакти) замість вертикального
-     списку, що раніше розсував контент сторінки вниз (grid-template-rows
-     0fr→1fr у .main-nav). Той самий патерн, що й у #categoriesDrawer —
-     спливаюча по центру картка (.mega-menu__panel), той самий JS
-     (openDrawer/closeDrawer у common.js) — лише замість фото-плиток
-     категорій тут плитки з іконками (.mega-menu__tile-media--icon,
-     стилі в mobile-tabbar.css). -->
 <div class="drawer mega-menu" id="navDrawer" role="dialog" aria-modal="true" aria-labelledby="navDrawerTitle" hidden>
   <div class="drawer__backdrop" data-drawer-close></div>
   <div class="mega-menu__panel">
@@ -349,7 +330,7 @@
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="M6 6l12 12"/></svg>
     </button>
     <div class="product-popup__media">
-      <img id="productPopupImg" src="" alt="" width="460" height="460">
+      <img id="productPopupImg" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" width="460" height="460">
       <div class="product-card__badges" id="productPopupBadges"></div>
     </div>
     <div class="product-popup__info">
@@ -379,7 +360,6 @@
 <div class="container">
   <h1 class="visually-hidden">Оформлення замовлення</h1>
 
-  <!-- Порожній кошик: показується замість візарда, якщо на сторінку прийшли напряму без товарів -->
   <div class="checkout-empty" id="checkoutEmpty" hidden>
     <h2>Кошик порожній</h2>
     <p>Спершу додайте страви з меню — тоді зможете оформити замовлення.</p>
@@ -400,14 +380,6 @@
       </a>
     </div>
 
-    <!-- Кожен крок — окремий <form>: коли поле на ІНШОМУ, схованому кроці
-         має required/pattern, браузер все одно намагається сфокусувати його
-         при валідації спільної форми і мовчки блокує сабміт ("An invalid
-         form control ... is not focusable" у консолі, без жодної видимої
-         помилки для користувача) — тому один спільний <form> на всі 6
-         кроків не працює. Окрема форма на крок повністю усуває це. -->
-
-    <!-- Крок 1 · Спосіб отримання -->
     <section class="checkout-step" data-step="fulfillment">
       <form class="checkout-step-form">
         <h2>Як зручніше отримати?</h2>
@@ -440,7 +412,6 @@
       </form>
     </section>
 
-    <!-- Крок 2 · Контакти -->
     <section class="checkout-step" data-step="contacts" hidden>
       <form class="checkout-step-form">
         <h2>Як з вами зв'язатися?</h2>
@@ -459,7 +430,6 @@
       </form>
     </section>
 
-    <!-- Крок 3 · Адреса (тільки доставка — пропускається при самовивозі) -->
     <section class="checkout-step" data-step="address" hidden>
       <form class="checkout-step-form">
         <h2>Куди привезти?</h2>
@@ -494,7 +464,6 @@
       </form>
     </section>
 
-    <!-- Крок 4 · Час і прибори -->
     <section class="checkout-step" data-step="time" hidden>
       <form class="checkout-step-form">
         <h2>Коли привезти?</h2>
@@ -532,7 +501,6 @@
       </form>
     </section>
 
-    <!-- Крок 5 · Оплата -->
     <section class="checkout-step" data-step="payment" hidden>
       <form class="checkout-step-form">
         <h2>Як платитимете?</h2>
@@ -564,7 +532,6 @@
       </form>
     </section>
 
-    <!-- Крок 6 · Перевірка -->
     <section class="checkout-step" data-step="review" hidden>
       <form class="checkout-step-form">
         <h2>Перевірте замовлення</h2>
@@ -580,7 +547,6 @@
       </form>
     </section>
 
-    <!-- Підтвердження (сьомий, "бонусний" екран — без форми, не рахується в "N з 6") -->
     <section class="checkout-step" data-step="done" hidden>
       <div class="active-order checkout-done-order">
         <span class="active-order__glow" aria-hidden="true"></span>

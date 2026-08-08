@@ -271,8 +271,18 @@ ${buildScripts(meta)}
 </html>
 `;
 
+  // Dev-коментарі лишаються тільки в src/ — зі збірки їх прибираємо: читачеві
+  // готового HTML вони не потрібні (зайві байти), а `--` всередині коментаря
+  // (BEM-класи на кшталт ...--icon) ламає XML-сумісність за W3C-валідатором.
+  // Умовних IE-коментарів на сайті немає, тож вирізати можна все підряд.
+  // Інлайн-скрипти — лише JSON-LD з екранованим "<" (jsonLdScript), випадково
+  // зачепити "<!--" всередині скрипта регулярка не може.
+  const cleaned = html
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/\n[ \t]*\n(?:[ \t]*\n)+/g, '\n\n');
+
   const outName = fileName.replace(/\.html$/, '') + '.html';
-  fs.writeFileSync(path.join(OUT_DIR, outName), html, 'utf8');
+  fs.writeFileSync(path.join(OUT_DIR, outName), cleaned, 'utf8');
   console.log('  ✓', outName);
 }
 
