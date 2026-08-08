@@ -1,0 +1,55 @@
+# Автоматична вигрузка даних Google Search Console у seo-data/gsc/.
+#
+# Запускається:
+#   - щопонеділка о 05:00 UTC (08:00 за Києвом) — свіжий тижневий зріз;
+#   - вручну кнопкою Run workflow (вкладка Actions);
+#   - при пуші змін самого скрипта/workflow — щоб одразу перевірити роботу.
+#
+# Результат комітиться назад у репозиторій ботом; [skip ci] у повідомленні
+# коміта — щоб цей коміт не запускав деплой на хостинг і сам себе.
+#
+# Секрет: GSC_SERVICE_ACCOUNT_JSON — повний JSON-ключ сервісного акаунта
+# Google, який доданий користувачем у Search Console (readonly-вигрузка).
+
+name: GSC export
+
+on:
+  schedule:
+    - cron: '0 5 * * 1'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/gsc-export.yml'
+      - 'build/gsc-export.js'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gsc-export
+  cancel-in-progress: false
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Забрати код
+        uses: actions/checkout@v4
+
+      - name: Вивантажити дані Search Console
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: node build/gsc-export.js
+
+      - name: Закомітити CSV у репозиторій
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add seo-data/
+          if git diff --cached --quiet; then
+            echo "Нових даних немає — коміт не потрібен"
+            exit 0
+          fi
+          git commit -m "GSC: автоматична вигрузка Search Console [skip ci]"
+          git push
