@@ -1,0 +1,63 @@
+# CI/CD: пуш у main → автоматичне розгортання на хостинг (ADM.TOOLS) по FTPS.
+#
+# Що відбувається:
+#   1. Збирається "чистий" набір файлів для хостингу: без src/, build/,
+#      README тощо (це файли розробки — на сервері їм робити нічого),
+#      а server/.htaccess кладеться в корінь як .htaccess.
+#   2. FTP-Deploy-Action порівнює файли зі станом попереднього деплою
+#      (.ftp-deploy-sync-state.json на сервері) і заливає ЛИШЕ змінені.
+#      Файли, які екшен ніколи не заливав (api/telegram-config.php з
+#      токеном, залитий вручну), він не чіпає й не видаляє.
+#
+# Секрети (Settings → Secrets and variables → Actions → New repository secret):
+#   FTP_HOST       — адреса FTP-сервера з панелі ADM.TOOLS (напр. ftp.adm.tools)
+#   FTP_USER       — логін FTP-акаунта
+#   FTP_PASSWORD   — пароль FTP-акаунта
+#   FTP_SERVER_DIR — шлях до кореня сайту, ОБОВ'ЯЗКОВО зі слешем у кінці
+#                    (напр. /pandasushi.od.ua/www/ — точний шлях видно
+#                    у файловому менеджері панелі або FTP-клієнті)
+#
+# Поки секрети не додані, запуск падатиме з помилкою — це очікувано.
+
+name: Deploy на хостинг
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # кнопка ручного запуску на вкладці Actions
+
+concurrency:
+  group: deploy-hosting
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Забрати код
+        uses: actions/checkout@v4
+
+      - name: Зібрати набір файлів для хостингу
+        run: |
+          mkdir _deploy
+          rsync -a \
+            --exclude '.git*' \
+            --exclude '_deploy' \
+            --exclude 'src/' \
+            --exclude 'build/' \
+            --exclude 'server/' \
+            --exclude 'package.json' \
+            --exclude 'README.md' \
+            ./ _deploy/
+          cp server/.htaccess _deploy/.htaccess
+          echo "Файлів до деплою: $(find _deploy -type f | wc -l)"
+
+      - name: Залити по FTPS (тільки змінені файли)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: _deploy/
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
