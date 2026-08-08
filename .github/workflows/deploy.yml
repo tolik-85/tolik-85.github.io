@@ -10,14 +10,12 @@
 #      токеном, залитий вручну), він не чіпає й не видаляє.
 #
 # Секрети (Settings → Secrets and variables → Actions → New repository secret):
-#   FTP_HOST       — адреса FTP-сервера з панелі ADM.TOOLS (напр. ftp.adm.tools)
-#   FTP_USER       — логін FTP-акаунта
-#   FTP_PASSWORD   — пароль FTP-акаунта
-#   FTP_SERVER_DIR — шлях до кореня сайту, ОБОВ'ЯЗКОВО зі слешем у кінці
-#                    (напр. /pandasushi.od.ua/www/ — точний шлях видно
-#                    у файловому менеджері панелі або FTP-клієнті)
+#   FTP_USER     — логін FTP-акаунта (pandas08_gituser)
+#   FTP_PASSWORD — пароль FTP-акаунта
 #
-# Поки секрети не додані, запуск падатиме з помилкою — це очікувано.
+# Хост і шлях не секретні, тому прописані нижче явно:
+#   - сервер pandas08.ftp.tools (з панелі ADM.TOOLS, розділ FTP)
+#   - server-dir "/" — FTP-користувач замкнений одразу в www/ сайту
 
 name: Deploy на хостинг
 
@@ -55,9 +53,9 @@ jobs:
       - name: Залити по FTPS (тільки змінені файли)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_HOST }}
+          server: pandas08.ftp.tools
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: _deploy/
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          server-dir: /
