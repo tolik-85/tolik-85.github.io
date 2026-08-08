@@ -7,9 +7,13 @@
 # ці модулі).
 
 # ---------- Примусовий HTTPS і канонічний домен (без www) ----------
+# SSL на хостингу термінується на фронт-проксі (nginx перед Apache), тому
+# %{HTTPS} тут ЗАВЖДИ off і перевірка по ньому дає нескінченну петлю 301.
+# Орієнтуємось на X-Forwarded-Proto від проксі: редиректимо лише коли він
+# ЯВНО каже, що клієнт прийшов по http.
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} ^http$ [NC]
   RewriteRule ^ https://pandasushi.od.ua%{REQUEST_URI} [L,R=301]
 
   RewriteCond %{HTTP_HOST} ^www\.pandasushi\.od\.ua$ [NC]
