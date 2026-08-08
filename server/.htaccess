@@ -42,6 +42,9 @@
 # ---------- Кешування статики ----------
 <IfModule mod_expires.c>
   ExpiresActive On
+  # HTML — короткий кеш: сторінки мають підхоплювати оновлення швидко
+  # (панель хостингу більше не кешує .html — вони йдуть через Apache).
+  ExpiresByType text/html "access plus 5 minutes"
   ExpiresByType text/css "access plus 7 days"
   ExpiresByType application/javascript "access plus 7 days"
   ExpiresByType font/woff2 "access plus 30 days"
