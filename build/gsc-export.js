@@ -61,14 +61,27 @@ async function getAccessToken() {
 }
 
 async function api(token, url, body) {
-  const res = await fetch(url, {
-    method: body ? 'POST' : 'GET',
-    headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
-    body: body ? JSON.stringify(body) : undefined,
-  });
-  const j = await res.json();
-  if (!res.ok) throw new Error('API ' + url + ' -> ' + res.status + ': ' + JSON.stringify(j).slice(0, 300));
-  return j;
+  // До 3 спроб: на раннерах GitHub зрідка трапляється разовий мережевий
+  // збій ("fetch failed" без HTTP-коду) — повтор через паузу його лікує.
+  let lastErr;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const res = await fetch(url, {
+        method: body ? 'POST' : 'GET',
+        headers: { Authorization: 'Bearer ' + token, 'Content-Type': 'application/json' },
+        body: body ? JSON.stringify(body) : undefined,
+      });
+      const j = await res.json();
+      if (!res.ok) throw new Error('API ' + url + ' -> ' + res.status + ': ' + JSON.stringify(j).slice(0, 300));
+      return j;
+    } catch (e) {
+      lastErr = e;
+      if (String(e.message).startsWith('API ')) throw e; // HTTP-помилка — повторювати нема сенсу
+      console.error('Спроба ' + attempt + ' не вдалася: ' + e.message + (e.cause ? ' (причина: ' + e.cause + ')' : ''));
+      if (attempt < 3) await new Promise((r) => setTimeout(r, 2000 * attempt));
+    }
+  }
+  throw lastErr;
 }
 
 function csvEscape(v) {
@@ -116,7 +129,8 @@ function writeCsv(file, headerCols, rows, keyCount) {
   const outDir = path.join(ROOT, 'seo-data', 'gsc', endDate);
   fs.mkdirSync(outDir, { recursive: true });
 
-  const queryUrl = 'https://searchconsole.googleapis.com/webmasters/v3/sites/' +
+  // Той самий хост, що й список ресурсів вище — він точно доступний з раннера.
+  const queryUrl = 'https://www.googleapis.com/webmasters/v3/sites/' +
     encodeURIComponent(site) + '/searchAnalytics/query';
 
   const slices = [
@@ -150,4 +164,8 @@ function writeCsv(file, headerCols, rows, keyCount) {
 
   fs.writeFileSync(path.join(outDir, 'summary.json'), JSON.stringify(summary, null, 2));
   console.log('Готово:', path.relative(ROOT, outDir));
-})().catch((e) => { console.error(e.message || e); process.exit(1); });
+})().catch((e) => {
+  console.error(e.message || e);
+  if (e && e.cause) console.error('Причина:', e.cause);
+  process.exit(1);
+});
