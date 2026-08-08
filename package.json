@@ -1,0 +1,9 @@
+{
+  "name": "panda-sushi-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Статичний сайт Панда Суші — чистий HTML/CSS/JS, збірка сторінок через Node-скрипт без фреймворків.",
+  "scripts": {
+    "build": "node build/build.js"
+  }
+}

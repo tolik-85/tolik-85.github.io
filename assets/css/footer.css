@@ -1,0 +1,140 @@
+/*
+  FOOTER.CSS — стилі підвалу сайту.
+  Розмітка підвалу: /src/partials/footer.html (вставляється build.js в кінець кожної сторінки).
+*/
+
+.site-footer {
+  background: var(--color-bg-deep);
+  border-top: 1px solid var(--border-subtle);
+}
+.site-footer__inner {
+  /* Тільки top/bottom — .container вже задає горизонтальні відступи
+     (padding-left/right), shorthand "padding: Y 0 Y" їх перебивав нулями. */
+  padding-top: clamp(48px, 6vw, 72px);
+  padding-bottom: 28px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: clamp(24px, 3vw, 40px);
+}
+
+.footer-brand__logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.footer-brand__mark {
+  position: relative;
+  width: 34px;
+  height: 36px;
+  flex: none;
+  display: block;
+}
+.footer-brand__mark span { position: absolute; border-radius: 50%; background: var(--color-text); }
+.footer-brand__ear-l { top: 0; left: 1px; width: 11px; height: 11px; }
+.footer-brand__ear-r { top: 0; right: 1px; width: 11px; height: 11px; }
+.footer-brand__face { top: 4px; left: 1px; width: 32px; height: 32px; }
+.footer-brand__eye-l { top: 15px; left: 10px; width: 5px; height: 7px; background: var(--color-bg-deep) !important; }
+.footer-brand__eye-r { top: 15px; right: 10px; width: 5px; height: 7px; background: var(--color-bg-deep) !important; }
+.footer-brand__nose {
+  bottom: 0;
+  right: -1px;
+  width: 9px;
+  height: 9px;
+  background: var(--color-accent) !important;
+  border: 2px solid var(--color-bg-deep);
+}
+.footer-brand__name { font-family: var(--font-heading); font-size: 17px; }
+.footer-brand__desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--color-text-dim);
+  margin: 16px 0 0;
+  max-width: 30ch;
+}
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.footer-social__link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-medium);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-soft);
+  font-size: 11px;
+  font-weight: 800;
+  transition: all var(--transition-fast);
+}
+.footer-social__link:hover { border-color: var(--color-accent); color: var(--color-accent); }
+
+.footer-col h3 {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  margin: 0 0 16px;
+  font-family: var(--font-body);
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  font-size: 13.5px;
+}
+.footer-links a { color: #B9B3A8; }
+.footer-links a:hover { color: var(--color-text); }
+.footer-col__note { font-size: 12px; color: var(--color-text-dim); margin-top: 6px; display: block; }
+
+.footer-contact__phone { font-size: 16px; font-weight: 800; }
+.footer-contact__hours { font-size: 12.5px; color: var(--color-text-dim); margin: 6px 0 0; }
+.footer-contact__address { font-size: 13.5px; color: #B9B3A8; margin: 16px 0 0; line-height: 1.6; }
+.footer-contact__address a { color: #B9B3A8; }
+.footer-contact__badge {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(245, 132, 53, .1);
+  color: var(--color-accent-soft);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.footer-divider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 44px 0 22px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  font-size: 12.5px;
+  color: var(--color-text-dim);
+}
+.footer-bottom a { color: var(--color-text-faint); }
+.footer-bottom a:hover { color: var(--color-text-soft); }
+.footer-pay {
+  margin-left: auto;
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.footer-pay span {
+  padding: 6px 12px;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+}

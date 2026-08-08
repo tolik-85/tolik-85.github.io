@@ -1,0 +1,22 @@
+/*
+  PROMOTIONS.CSS — стилі сторінки "Акції" (/promotions.html).
+*/
+
+.promo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(14px, 1.8vw, 20px); margin-top: 22px; }
+.promo-tile { display: flex; flex-direction: column; background: #1C1916; border: 1px solid var(--border-subtle); border-radius: 26px; overflow: hidden; transition: all .25s; }
+.promo-tile:hover { border-color: rgba(245, 132, 53, .35); transform: translateY(-3px); }
+.promo-tile__media { position: relative; display: block; aspect-ratio: 16 / 10; }
+.promo-tile__media img { width: 100%; height: 100%; object-fit: cover; }
+.promo-tile__media--icon { display: flex; align-items: center; justify-content: center; background: linear-gradient(140deg, #2A1710, #1C1916); }
+.promo-tile__icon { width: 56px; height: 56px; border-radius: 16px; background: rgba(245, 132, 53, .14); color: var(--color-accent); display: inline-flex; align-items: center; justify-content: center; }
+.promo-tile__tag { position: absolute; top: 14px; left: 14px; padding: 7px 13px; border-radius: var(--radius-pill); font-size: 12px; font-weight: 800; letter-spacing: .04em; }
+.promo-tile__body { display: flex; flex-direction: column; flex: 1; padding: 20px 22px 22px; }
+.promo-tile__body h2 { font-size: 21px; line-height: 1.25; margin: 0; }
+.promo-tile__body p { font-size: 14px; line-height: 1.6; color: var(--color-text-dim); margin: 10px 0 0; flex: 1; }
+.promo-tile__foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border-subtle); }
+.promo-tile__period { font-size: 12.5px; color: var(--color-text-dim); }
+/* Ціна товару-акції (замість колишнього посилання "Замовити →") — велика
+   поточна ціна + закреслена стара, поруч кругла кнопка .add-to-cart-btn
+   (стилі з home.css, той самий компонент, що й на картках товару). */
+.promo-tile__price { font-size: 19px; font-weight: 800; color: var(--color-accent); }
+.promo-tile__price s { margin-left: 7px; font-size: 13.5px; font-weight: 600; color: var(--color-text-faint); }

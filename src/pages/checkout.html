@@ -1,0 +1,238 @@
+<!--
+title: Оформлення замовлення | Панда Суші
+description: Оформіть замовлення суші з доставкою або самовивозом в Одесі — оберіть спосіб отримання, адресу, час і спосіб оплати за 6 простих кроків.
+canonical: /checkout.html
+ogImage: /assets/images/home/hero-set.jpg
+bodyClass: page-checkout
+css: checkout, account
+js: checkout
+noindex: true
+-->
+<div class="container">
+  <h1 class="visually-hidden">Оформлення замовлення</h1>
+
+  <!-- Порожній кошик: показується замість візарда, якщо на сторінку прийшли напряму без товарів -->
+  <div class="checkout-empty" id="checkoutEmpty" hidden>
+    <h2>Кошик порожній</h2>
+    <p>Спершу додайте страви з меню — тоді зможете оформити замовлення.</p>
+    <a href="/menu.html" class="btn btn-primary">Перейти до меню</a>
+  </div>
+
+  <div class="checkout-wizard" id="checkoutWizard" hidden>
+    <div class="checkout-head" id="checkoutHead">
+      <button type="button" class="checkout-head__back" id="checkoutBack" aria-label="Крок назад" hidden>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <div class="checkout-head__mid">
+        <span class="checkout-head__label" id="checkoutStepLabel">Крок 1 з 6 · Отримання</span>
+        <div class="checkout-progress" id="checkoutProgress" aria-hidden="true"></div>
+      </div>
+      <a href="/menu.html" class="checkout-head__close" id="checkoutClose" aria-label="Закрити оформлення замовлення">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="M6 6l12 12"/></svg>
+      </a>
+    </div>
+
+    <!-- Кожен крок — окремий <form>: коли поле на ІНШОМУ, схованому кроці
+         має required/pattern, браузер все одно намагається сфокусувати його
+         при валідації спільної форми і мовчки блокує сабміт ("An invalid
+         form control ... is not focusable" у консолі, без жодної видимої
+         помилки для користувача) — тому один спільний <form> на всі 6
+         кроків не працює. Окрема форма на крок повністю усуває це. -->
+
+    <!-- Крок 1 · Спосіб отримання -->
+    <section class="checkout-step" data-step="fulfillment">
+      <form class="checkout-step-form">
+        <h2>Як зручніше отримати?</h2>
+        <div class="checkout-options" role="radiogroup" aria-label="Спосіб отримання">
+          <label class="checkout-option is-active">
+            <input type="radio" name="fulfillment" value="delivery" checked>
+            <span class="checkout-option__mark" aria-hidden="true"></span>
+            <span class="checkout-option__body">
+              <span class="checkout-option__title">Доставка на адресу</span>
+              <span class="checkout-option__hint">40–70 хв · від 79 ₴</span>
+            </span>
+          </label>
+          <label class="checkout-option">
+            <input type="radio" name="fulfillment" value="pickup">
+            <span class="checkout-option__mark" aria-hidden="true"></span>
+            <span class="checkout-option__body">
+              <span class="checkout-option__title">Самовивіз з вул. Грецька, 12</span>
+              <span class="checkout-option__hint">Готово ~25 хв · знижка −10%</span>
+            </span>
+          </label>
+        </div>
+        <div class="checkout-minorder" id="checkoutMinOrder">
+          <div class="checkout-minorder__row"><span>Мінімальне замовлення</span><b id="checkoutMinOrderSum">350 ₴</b></div>
+          <div class="checkout-minorder__row"><span>У кошику</span><b id="checkoutCartSum">0 ₴</b></div>
+        </div>
+        <p class="checkout-step__note" id="checkoutMinOrderNote">Від цього вибору залежить, які поля будуть далі — адреса потрібна тільки для доставки.</p>
+        <div class="checkout-step__actions">
+          <button type="submit" class="btn btn-primary">Далі · Контакти</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Крок 2 · Контакти -->
+    <section class="checkout-step" data-step="contacts" hidden>
+      <form class="checkout-step-form">
+        <h2>Як з вами зв'язатися?</h2>
+        <label class="checkout-field">
+          <span class="checkout-field__label">Телефон <b class="checkout-field__req">обов'язково</b></span>
+          <input type="tel" id="checkoutPhone" name="phone" placeholder="+380 __ ___ __ __" autocomplete="tel" required pattern="^\+?3?8?0\d{9}$">
+        </label>
+        <p class="checkout-field__hint">Потрібен, щоб підтвердити замовлення та передати кур'єру.</p>
+        <label class="checkout-field">
+          <span class="checkout-field__label">Ім'я <b class="checkout-field__opt">необов'язково</b></span>
+          <input type="text" id="checkoutName" name="name" placeholder="Як до вас звертатися" autocomplete="given-name">
+        </label>
+        <div class="checkout-step__actions">
+          <button type="submit" class="btn btn-primary">Далі</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Крок 3 · Адреса (тільки доставка — пропускається при самовивозі) -->
+    <section class="checkout-step" data-step="address" hidden>
+      <form class="checkout-step-form">
+        <h2>Куди привезти?</h2>
+        <div class="checkout-map" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span id="checkoutMapAddr">Вкажіть вулицю нижче</span>
+        </div>
+        <label class="checkout-field">
+          <span class="checkout-field__label">Вулиця і будинок <b class="checkout-field__req">обов'язково</b></span>
+          <input type="text" id="checkoutStreet" name="street" placeholder="Напр. вул. Дерибасівська, 15" autocomplete="street-address" required>
+        </label>
+        <div class="checkout-field">
+          <span class="checkout-field__label">Деталі — за бажанням</span>
+          <div class="checkout-field__row">
+            <input type="text" id="checkoutApt" placeholder="Кв.">
+            <input type="text" id="checkoutEntrance" placeholder="Під'їзд">
+            <input type="text" id="checkoutFloor" placeholder="Поверх">
+            <input type="text" id="checkoutIntercom" placeholder="Домофон">
+          </div>
+        </div>
+        <label class="checkout-field">
+          <span class="checkout-field__label">Коментар кур'єру</span>
+          <textarea id="checkoutComment" rows="2" placeholder="Напр. вхід з двору, зелена хвіртка"></textarea>
+        </label>
+        <div class="checkout-chip-row">
+          <button type="button" class="checkout-chip" data-comment-chip="Дзвінок біля під'їзду">+ Дзвінок біля під'їзду</button>
+          <button type="button" class="checkout-chip" data-comment-chip="Без домофона">+ Без домофона</button>
+        </div>
+        <div class="checkout-step__actions">
+          <button type="submit" class="btn btn-primary">Далі · Час</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Крок 4 · Час і прибори -->
+    <section class="checkout-step" data-step="time" hidden>
+      <form class="checkout-step-form">
+        <h2>Коли привезти?</h2>
+        <div class="checkout-options" role="radiogroup" aria-label="Час подачі">
+          <label class="checkout-option is-active">
+            <input type="radio" name="timeMode" value="asap" checked>
+            <span class="checkout-option__mark" aria-hidden="true"></span>
+            <span class="checkout-option__body"><span class="checkout-option__title">Якнайшвидше</span></span>
+          </label>
+          <label class="checkout-option">
+            <input type="radio" name="timeMode" value="scheduled">
+            <span class="checkout-option__mark" aria-hidden="true"></span>
+            <span class="checkout-option__body"><span class="checkout-option__title">До часу</span><span class="checkout-option__hint">Оберіть дату й час</span></span>
+          </label>
+        </div>
+        <div class="checkout-field__row" id="checkoutScheduleRow" hidden>
+          <input type="date" id="checkoutDate" aria-label="Дата доставки">
+          <input type="time" id="checkoutTime" min="10:00" max="22:45" aria-label="Час доставки">
+        </div>
+        <h3 class="checkout-substep-title">На скільки персон потрібні прибори?</h3>
+        <p class="checkout-step__note">Не кладемо зайвий пластик без запиту.</p>
+        <div class="checkout-chip-row" id="checkoutPersonsRow" role="radiogroup" aria-label="Кількість приборів">
+          <button type="button" class="checkout-chip is-active" data-persons="0">Не потрібні</button>
+          <button type="button" class="checkout-chip" data-persons="1">1</button>
+          <button type="button" class="checkout-chip" data-persons="2">2</button>
+          <button type="button" class="checkout-chip" data-persons="3">3</button>
+          <button type="button" class="checkout-chip" data-persons="4">4</button>
+          <button type="button" class="checkout-chip" data-persons="5">5</button>
+          <button type="button" class="checkout-chip" data-persons="6">6+</button>
+        </div>
+        <p class="checkout-field__hint">Соєвий соус та імбир кладемо за кількістю персон.</p>
+        <div class="checkout-step__actions">
+          <button type="submit" class="btn btn-primary">Далі · Оплата</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Крок 5 · Оплата -->
+    <section class="checkout-step" data-step="payment" hidden>
+      <form class="checkout-step-form">
+        <h2>Як платитимете?</h2>
+        <div class="checkout-options" role="radiogroup" aria-label="Спосіб оплати">
+          <label class="checkout-option">
+            <input type="radio" name="payment" value="card">
+            <span class="checkout-option__mark" aria-hidden="true"></span>
+            <span class="checkout-option__body"><span class="checkout-option__title">Картою кур'єру</span><span class="checkout-option__hint">Термінал у кур'єра</span></span>
+          </label>
+          <label class="checkout-option is-active">
+            <input type="radio" name="payment" value="cash" checked>
+            <span class="checkout-option__mark" aria-hidden="true"></span>
+            <span class="checkout-option__body"><span class="checkout-option__title">Готівкою кур'єру</span></span>
+          </label>
+        </div>
+        <div class="checkout-field" id="checkoutCashRow">
+          <span class="checkout-field__label">Підготувати решту з</span>
+          <input type="number" id="checkoutChangeFrom" inputmode="numeric" min="0" step="10" placeholder="Напр. 1000">
+          <div class="checkout-chip-row">
+            <button type="button" class="checkout-chip" data-change="1000">1000</button>
+            <button type="button" class="checkout-chip" data-change="2000">2000</button>
+            <button type="button" class="checkout-chip" data-change="exact">Без решти</button>
+          </div>
+        </div>
+        <p class="checkout-field__hint" id="checkoutPayTotal">Сума до сплати — 0 ₴.</p>
+        <div class="checkout-step__actions">
+          <button type="submit" class="btn btn-primary">Далі · Перевірка</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Крок 6 · Перевірка -->
+    <section class="checkout-step" data-step="review" hidden>
+      <form class="checkout-step-form">
+        <h2>Перевірте замовлення</h2>
+        <div class="checkout-summary" id="checkoutSummary"></div>
+        <div class="checkout-review-list" id="checkoutReviewList"></div>
+        <div class="checkout-total"><span>До сплати</span><b id="checkoutTotal">0 ₴</b></div>
+        <p class="checkout-step__error" id="checkoutSubmitError" hidden tabindex="-1"></p>
+        <div class="checkout-step__actions">
+          <button type="submit" class="btn btn-primary" id="checkoutSubmitBtn">Підтвердити замовлення</button>
+        </div>
+        <p class="checkout-step__note">Підтверджуючи, ви надсилаєте замовлення нашій команді — зателефонуємо, щоб узгодити деталі. Питання одразу: <a href="tel:+380973981846" style="color:var(--color-accent-soft);text-decoration:underline">097 398 18 46</a>.</p>
+        <p class="form-legal">Підтверджуючи замовлення, ви погоджуєтесь на обробку персональних даних (ім'я, телефон, адреса) згідно з <a href="/legal.html#privacy">політикою конфіденційності</a>.</p>
+      </form>
+    </section>
+
+    <!-- Підтвердження (сьомий, "бонусний" екран — без форми, не рахується в "N з 6") -->
+    <section class="checkout-step" data-step="done" hidden>
+      <div class="active-order checkout-done-order">
+        <span class="active-order__glow" aria-hidden="true"></span>
+        <div class="active-order__top">
+          <div style="flex:999 1 260px;min-width:0">
+            <span class="active-order__badge">ЗАМОВЛЕННЯ ПРИЙНЯТО</span>
+            <h3 id="checkoutOrderNum">№ 0000</h3>
+            <p class="active-order__items" id="checkoutOrderItems"></p>
+          </div>
+        </div>
+        <div class="active-order__progress"><span class="is-done"></span><span></span><span></span><span></span></div>
+        <div class="active-order__steps"><span class="is-done">Прийнято</span><span>Готуємо</span><span>Кур'єр у дорозі</span><span>Доставлено</span></div>
+        <div class="active-order__actions">
+          <a href="tel:+380973981846" class="btn btn-primary">Зателефонувати 097 398 18 46</a>
+        </div>
+      </div>
+      <p class="checkout-step__note">Замовлення надіслано нашій команді — незабаром зателефонуємо, щоб підтвердити деталі. Якщо не додзвонимось або питання термінові — наберіть нас самі: <a href="tel:+380973981846" style="color:var(--color-accent-soft);text-decoration:underline">097 398 18 46</a>.</p>
+      <div class="checkout-step__actions">
+        <a href="/menu.html" class="btn btn-ghost">На головну меню</a>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,171 @@
+/*
+  MOBILE-TABBAR.CSS — нижня фіксована панель на мобільному (<861px):
+  "Меню" (категорії товарів, шухляда #categoriesDrawer) і "Кошик" (#cartDrawer).
+  Розмітка: /src/partials/header.html. Логіка: /assets/js/common.js.
+  Підключається глобально (always-included у build.js), бо панель потрібна
+  на кожній сторінці, а не лише на каталогах.
+*/
+
+.mobile-tabbar { display: none; }
+
+@media (max-width: 860px) {
+  /* Компенсуємо висоту фіксованої панелі, щоб останній контент/футер
+     сторінки не ховався під нею. */
+  body { padding-bottom: 66px; }
+
+  .mobile-tabbar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 150;
+    background: rgba(19, 17, 16, .96);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-top: 1px solid var(--border-subtle);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .mobile-tabbar__btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 9px 0 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--color-text-soft);
+  }
+  .mobile-tabbar__btn:hover,
+  .mobile-tabbar__btn:active { color: var(--color-accent); }
+  .mobile-tabbar__icon-wrap { position: relative; display: inline-flex; }
+  .mobile-tabbar__icon-wrap .badge--cart { top: -7px; right: -11px; }
+}
+
+/* ---------- Мега-меню категорій у #categoriesDrawer ----------
+   Спливаюча по центру картка (не бічна шухляда): інфо-рядок + лого
+   зверху, нижче — плитка 3 колонки (фото + назва + к-сть) зі скролом.
+   Клас .drawer лишається на кореневому елементі заради спільного
+   JS (openDrawer/closeDrawer, backdrop, Escape) — .mega-menu лише
+   перекриває розмітку панелі під плитку. */
+.mega-menu .drawer__backdrop { cursor: zoom-out; }
+
+.mega-menu__panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(460px, calc(100vw - 28px));
+  max-height: min(680px, calc(100vh - 96px));
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface-2);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .5);
+  overflow: hidden;
+}
+
+.mega-menu__close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 1;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-accent);
+  color: var(--color-accent);
+  background: rgba(19, 17, 16, .5);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.mega-menu__close:hover { background: rgba(245, 132, 53, .12); }
+
+.mega-menu__head {
+  flex: none;
+  padding: 20px 60px 18px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.mega-menu__info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+.mega-menu__info-item { display: inline-flex; align-items: center; gap: 6px; }
+.mega-menu__info-item b { color: var(--color-text); font-weight: 700; }
+.mega-menu__brand { display: flex; align-items: center; gap: 12px; }
+
+.mega-menu__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 18px 18px 22px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) transparent;
+}
+.mega-menu__body::-webkit-scrollbar { width: 5px; }
+.mega-menu__body::-webkit-scrollbar-track { background: transparent; }
+.mega-menu__body::-webkit-scrollbar-thumb { background: var(--color-accent); border-radius: var(--radius-pill); }
+
+.mega-menu__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px 12px;
+}
+.mega-menu__tile { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.mega-menu__tile-media {
+  display: block;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--border-subtle);
+}
+.mega-menu__tile-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s ease; }
+.mega-menu__tile:hover .mega-menu__tile-media img { transform: scale(1.06); }
+.mega-menu__tile-name {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.25;
+}
+.mega-menu__tile-count { font-size: 11px; color: var(--color-text-dim); }
+.mega-menu__tile.is-active .mega-menu__tile-media { border-color: var(--color-accent); }
+.mega-menu__tile.is-active .mega-menu__tile-name { color: var(--color-accent); }
+
+@media (max-width: 360px) {
+  .mega-menu__grid { gap: 14px 8px; }
+  .mega-menu__tile-name { font-size: 12px; }
+}
+
+/* ---------- Плитки-іконки в #navDrawer (головне меню шапки) ----------
+   Той самий .mega-menu__tile/-media, що й у фото-плиток категорій, лише
+   замість <img> — по центру SVG-іконка (свій колір/hover замість
+   object-fit:cover фото). */
+.mega-menu__tile-media--icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mega-menu__tile-media--icon svg {
+  color: var(--color-text-soft);
+  transition: color .2s ease, transform .25s ease;
+}
+.mega-menu__tile:hover .mega-menu__tile-media--icon svg {
+  color: var(--color-accent);
+  transform: scale(1.1);
+}
+/* "Акції" — та сама акцентна відмінність, що й у .main-nav__link--accent
+   (десктопне горизонтальне меню): помаранчева іконка й підпис навіть без
+   наведення, щоб виділялась серед інших пунктів. */
+.mega-menu__tile--accent .mega-menu__tile-media { border-color: var(--color-accent); }
+.mega-menu__tile--accent .mega-menu__tile-media--icon svg { color: var(--color-accent); }
+.mega-menu__tile--accent .mega-menu__tile-name { color: var(--color-promo-link); }

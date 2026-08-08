@@ -1,0 +1,278 @@
+/*
+  BASE.CSS — фундамент дизайн-системи «Панда Суші».
+  Підключається на КОЖНІЙ сторінці першим (одразу після fonts.css).
+  Тут: CSS reset, змінні дизайну (кольори/відступи/шрифти), базова типографіка
+  і кілька дрібних утиліт, які повторюються на всіх сторінках.
+
+  Стилі конкретних секцій (шапка, підвал, картки товарів тощо) живуть
+  у своїх окремих файлах — /assets/css/header.css, /assets/css/footer.css і т.д.
+*/
+
+/* ---------- 1. Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, h1, h2, h3, h4, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+ul[class], ol[class] { list-style: none; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { min-height: 100vh; }
+img, picture, svg, video { display: block; max-width: 100%; height: auto; }
+input, button, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; background: none; border: none; }
+a { color: inherit; text-decoration: none; }
+table { border-collapse: collapse; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- 2. Design tokens ---------- */
+:root {
+  /* Кольори фону */
+  --color-bg: #131110;
+  --color-bg-alt: #17130F;
+  --color-bg-deep: #0F0D0C;
+  --color-surface: #1E1B18;
+  --color-surface-2: #1A1715;
+
+  /* Текст
+     text-faint/text-dim підняті 08.08.2026 (аудит контрасту) — старі значення
+     (#847D71/#8F8779) давали лише ~4.3:1 на типових картках (#1C1916/#2D2218),
+     нижче WCAG AA 4.5:1 для звичайного тексту. Нові — з тим самим теплим
+     відтінком, перевірені Lighthouse на реальних фонах сайту. */
+  --color-text: #F4F0E8;
+  --color-text-muted: #A79F92;
+  --color-text-dim: #A69D8F;
+  --color-text-faint: #9C9486;
+  --color-text-soft: #CFC9BE;
+
+  /* Акценти бренду */
+  --color-accent: #F58435;
+  --color-accent-hover: #FF9448;
+  --color-accent-soft: #F0A05C;
+  --color-accent-ink: #1A1410; /* текст на помаранчевому фоні */
+  --color-success: #5DB388;
+  --color-danger: #FF8A80;
+
+  /* Промо-блок (градієнт) */
+  --color-promo-grad-start: #3F1A10;
+  --color-promo-grad-end: #59250F;
+  --color-promo-text: #F3C9A2;
+  --color-promo-strong: #FFC08A;
+  --color-promo-code-text: #FFD9B3;
+  --color-promo-link: #FFB47D;
+
+  /* Обведення */
+  --border-subtle: rgba(255, 255, 255, .06);
+  --border-soft: rgba(255, 255, 255, .09);
+  --border-medium: rgba(255, 255, 255, .12);
+
+  /* Шрифти */
+  --font-heading: 'Prata', Georgia, serif;
+  --font-body: 'Manrope', system-ui, -apple-system, sans-serif;
+
+  /* Радіуси */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 26px;
+  --radius-pill: 999px;
+
+  /* Тіні */
+  --shadow-accent: 0 10px 26px rgba(245, 132, 53, .35);
+
+  /* Контейнер сторінки */
+  --container-max: 1240px;
+  --container-pad: clamp(16px, 4vw, 44px);
+
+  /* Фірмовий вертикальний ритм секцій */
+  --section-gap: clamp(64px, 9vw, 116px);
+  --section-gap-sm: clamp(40px, 5vw, 68px);
+
+  /* Швидкість переходів */
+  --transition-fast: .2s ease;
+}
+
+/* ---------- 3. Базова типографіка ---------- */
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.1;
+  text-wrap: pretty;
+}
+
+/* ---------- 4. Утиліти, спільні для всіх сторінок ---------- */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 12px;
+  z-index: 1000;
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  transition: top var(--transition-fast);
+}
+.skip-link:focus {
+  top: 12px;
+}
+
+/* Видима фокус-рамка для клавіатурної навігації */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 14px;
+  padding: 12px 22px;
+  transition: all var(--transition-fast);
+  border: none;
+}
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-accent);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text-soft);
+  border: 1px solid var(--border-medium);
+}
+.btn-ghost:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.section {
+  margin-top: var(--section-gap);
+  /* Шапка сайту position:sticky і сягає ~185px (з промо-смугою) / ~292px на мобільному —
+     без цього відступу заголовок секції ховається під шапкою після переходу по якорю
+     (#hits, #reviews, #faq тощо). Той самий фікс, що вже стоїть на .menu-section-title. */
+  scroll-margin-top: 190px;
+}
+@media (max-width: 860px) {
+  .section { scroll-margin-top: 310px; }
+}
+.section-sm {
+  margin-top: var(--section-gap-sm);
+}
+.section-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+.card {
+  background: var(--color-surface-2);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-lg);
+}
+
+/* ---------- Статус форм (заглушка без бекенду) — форми на кількох сторінках ---------- */
+.form-status {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(93, 179, 136, .08);
+  border: 1px solid rgba(93, 179, 136, .3);
+  color: var(--color-text-soft);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+.form-status a { color: var(--color-accent-soft); font-weight: 700; }
+/* Згода на обробку даних під формами — спільний стиль для всіх форм сайту */
+.form-legal { font-size: 12px; line-height: 1.6; color: var(--color-text-dim); margin: 14px 0 0; }
+.form-legal a { color: var(--color-text-dim); text-decoration: underline; }
+/* Honeypot-поле проти ботів: приховане візуально, але доступне для скрипт-заповнювачів */
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ---------- Хлібні крихти (навігаційний ланцюжок) — на всіх внутрішніх сторінках ---------- */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+  color: var(--color-text-faint);
+  padding: 18px 0 0;
+}
+.breadcrumbs a { color: var(--color-text-faint); }
+.breadcrumbs a:hover { color: var(--color-accent); }
+.breadcrumbs span[aria-current] { color: var(--color-text-soft); }
+
+/* ---------- Заголовок внутрішньої сторінки (без великого hero) ---------- */
+.page-head { padding: 22px 0 6px; }
+.page-head h1 {
+  font-size: clamp(30px, 4.2vw, 52px);
+  line-height: 1.1;
+}
+.page-head__lede {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  max-width: 62ch;
+  margin: 16px 0 0;
+}
+.page-head__stats { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 22px; }
+.page-head__stat {
+  flex: 1 1 90px;
+  background: var(--color-surface-2);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  padding: 14px 16px;
+}
+.page-head__stat-value { font-family: var(--font-heading); font-size: 26px; }
+.page-head__stat-label { font-size: 12.5px; color: var(--color-text-dim); margin-top: 4px; }

@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Як обрати суші, щоб не отруїтись: 7 ознак свіжої риби",
+  "description": "Шеф-кухар Панда Суші пояснює сім ознак свіжої риби — які можна перевірити і вдома, коли замовлення вже приїхало.",
+  "image": "https://pandasushi.od.ua/assets/images/home/hit-philadelphia.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Кенджі Танака",
+    "jobTitle": "Шеф-кухар"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Панда Суші",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://pandasushi.od.ua/assets/images/icons/icon-512.png"
+    }
+  },
+  "datePublished": "2026-01-18",
+  "dateModified": "2026-01-18",
+  "mainEntityOfPage": "https://pandasushi.od.ua/article.html"
+}

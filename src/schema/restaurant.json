@@ -1,0 +1,37 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Панда Суші",
+  "image": "https://pandasushi.od.ua/assets/images/home/hero-set.jpg",
+  "url": "https://pandasushi.od.ua/",
+  "telephone": "+380973981846",
+  "priceRange": "₴₴",
+  "servesCuisine": ["Japanese", "Sushi", "Asian"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "вул. Грецька, 12",
+    "addressLocality": "Одеса",
+    "addressCountry": "UA"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "10:00",
+    "closes": "22:45"
+  },
+  "menu": "https://pandasushi.od.ua/menu.html",
+  "acceptsReservations": "False",
+  "areaServed": [
+    { "@type": "Place", "name": "Центр Одеси" },
+    { "@type": "Place", "name": "Приморський район" },
+    { "@type": "Place", "name": "Аркадія" },
+    { "@type": "Place", "name": "Фонтан" },
+    { "@type": "Place", "name": "Таїрова" },
+    { "@type": "Place", "name": "Київський район" },
+    { "@type": "Place", "name": "Черьомушки" },
+    { "@type": "Place", "name": "Молдаванка" },
+    { "@type": "Place", "name": "Слобідка" },
+    { "@type": "Place", "name": "Пересип" },
+    { "@type": "Place", "name": "Селище Котовського" }
+  ]
+}

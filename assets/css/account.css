@@ -1,0 +1,118 @@
+/*
+  ACCOUNT.CSS — стилі сторінки "Особистий кабінет" (/account.html).
+  Це демо-перегляд інтерфейсу з прикладними даними — без реальної авторизації.
+*/
+
+.account-demo-banner {
+  margin-top: 18px; padding: 14px 18px; border-radius: var(--radius-md);
+  background: rgba(245, 132, 53, .08); border: 1px solid rgba(245, 132, 53, .3);
+  color: var(--color-text-soft); font-size: 13.5px; line-height: 1.6;
+}
+
+.account-head { padding: clamp(18px, 2.6vw, 30px) 0 0; }
+.account-head h1 { font-size: clamp(28px, 3.6vw, 44px); line-height: 1.12; }
+.account-head p { font-size: 16px; line-height: 1.7; color: var(--color-text-muted); margin: 12px 0 0; max-width: 56ch; }
+
+.account-layout { display: flex; flex-wrap: wrap; gap: clamp(22px, 3vw, 44px); align-items: flex-start; margin-top: clamp(26px, 3.4vw, 40px); }
+.account-sidebar { flex: 1 1 240px; position: sticky; top: 100px; }
+.account-tabs { background: #1C1916; border: 1px solid var(--border-subtle); border-radius: 22px; padding: 10px; display: flex; flex-direction: column; gap: 2px; }
+.account-tab { display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; padding: 13px 16px; border-radius: 14px; color: var(--color-text-soft); font-size: 14.5px; font-weight: 600; transition: all var(--transition-fast); }
+.account-tab span:last-child { flex: none; font-size: 12.5px; color: var(--color-text-faint); font-weight: 700; }
+.account-tab:hover { background: rgba(255, 255, 255, .04); }
+.account-tab.is-active { background: rgba(245, 132, 53, .1); color: var(--color-accent); font-weight: 800; }
+
+.account-logout {
+  width: 100%; margin-top: 14px; padding: 14px; border-radius: 16px; background: transparent;
+  border: 1px solid var(--border-soft); color: var(--color-text-faint); font-size: 13.5px; font-weight: 700; text-align: center;
+  display: block; transition: all var(--transition-fast);
+}
+.account-logout:hover { border-color: rgba(224, 161, 151, .4); color: #E0A197; }
+
+.account-main { flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: clamp(40px, 5vw, 60px); }
+.account-section-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; }
+.account-section-head span { font-size: 13.5px; color: var(--color-text-faint); }
+
+.active-order { position: relative; overflow: hidden; background: linear-gradient(125deg, #241610, #1A1715); border: 1px solid rgba(245, 132, 53, .24); border-radius: 26px; padding: clamp(20px, 2.6vw, 28px); margin-top: 20px; }
+.active-order__glow { position: absolute; top: -110px; right: -80px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(245, 132, 53, .12), transparent 65%); pointer-events: none; }
+.active-order__top { position: relative; display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-start; }
+.active-order__badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(245, 132, 53, .16); color: var(--color-promo-link); border-radius: var(--radius-pill); padding: 6px 13px; font-size: 11.5px; font-weight: 800; letter-spacing: .06em; }
+.active-order h3 { font-family: var(--font-heading); font-weight: 400; font-size: clamp(20px, 2.2vw, 26px); margin: 14px 0 0; }
+.active-order__items { font-size: 14px; color: var(--color-text-muted); margin: 8px 0 0; line-height: 1.6; }
+.active-order__eta-label { font-size: 12.5px; color: var(--color-text-dim); }
+.active-order__eta { font-family: var(--font-heading); font-size: clamp(24px, 2.6vw, 30px); margin-top: 4px; white-space: nowrap; }
+.active-order__progress { display: flex; gap: 6px; margin-top: 22px; position: relative; }
+.active-order__progress span { flex: 1; height: 5px; border-radius: var(--radius-pill); background: var(--border-medium); }
+.active-order__progress span.is-done { background: var(--color-accent); }
+.active-order__steps { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; position: relative; }
+.active-order__steps span { flex: 1 1 90px; font-size: 12px; color: var(--color-text-faint); }
+.active-order__steps span.is-done { color: var(--color-accent-soft); font-weight: 700; }
+.active-order__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; position: relative; }
+
+.order-list { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+.order-card { background: #1C1916; border: 1px solid var(--border-subtle); border-radius: 22px; padding: clamp(18px, 2.2vw, 24px); }
+.order-card__row { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-start; }
+.order-card__main { flex: 999 1 240px; min-width: 0; }
+.order-card__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.order-card__num { font-size: 15.5px; font-weight: 800; }
+.order-card__status { border-radius: var(--radius-pill); padding: 5px 12px; font-size: 11.5px; font-weight: 800; letter-spacing: .04em; }
+.order-card__date { font-size: 12.5px; color: var(--color-text-dim); }
+.order-card__items { font-size: 14px; line-height: 1.6; color: var(--color-text-muted); margin: 10px 0 0; }
+.order-card__address { font-size: 12.5px; color: var(--color-text-dim); margin-top: 8px; }
+.order-card__side { flex: 1 1 160px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.order-card__sum { font-family: var(--font-heading); font-size: 23px; white-space: nowrap; }
+.order-card__actions { display: flex; flex-wrap: wrap; gap: 8px; width: 100%; }
+.order-card__actions button { flex: 1 1 110px; padding: 11px 16px; border-radius: var(--radius-pill); border: 1px solid var(--border-medium); color: var(--color-text-soft); font-size: 13px; font-weight: 800; transition: all var(--transition-fast); }
+.order-card__actions button:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.order-card__actions button:last-child { flex: none; font-weight: 700; }
+
+.profile-card { background: #1C1916; border: 1px solid var(--border-subtle); border-radius: 24px; padding: clamp(20px, 2.6vw, 28px); margin-top: 20px; }
+.profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.profile-field { display: block; }
+.profile-field span { display: block; font-size: 12.5px; color: var(--color-text-dim); margin-bottom: 7px; }
+.profile-field input {
+  width: 100%; padding: 14px 18px; background: var(--color-bg); border: 1px solid var(--border-soft); border-radius: 14px;
+  color: var(--color-text); font-size: 15px; outline: none;
+}
+.profile-field input:disabled { background: #171412; border-color: var(--border-subtle); color: var(--color-text-faint); }
+.profile-card__note { font-size: 12.5px; color: var(--color-text-dim); margin: 14px 0 0; }
+
+.notif-card { background: #1C1916; border: 1px solid var(--border-subtle); border-radius: 24px; padding: clamp(20px, 2.6vw, 28px); margin-top: 14px; }
+.notif-card h3 { font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--color-text-faint); margin: 0 0 4px; font-family: var(--font-body); }
+.notif-row { display: flex; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border-subtle); }
+.notif-row:last-child { border-bottom: none; }
+.notif-row__text { flex: 1; min-width: 0; }
+.notif-row__title { display: block; font-size: 14.5px; font-weight: 700; }
+.notif-row__desc { display: block; font-size: 13px; color: var(--color-text-dim); margin-top: 4px; line-height: 1.5; }
+.notif-toggle {
+  flex: none; width: 50px; height: 29px; border-radius: var(--radius-pill); border: 1px solid var(--border-medium);
+  padding: 2px; display: flex; transition: all var(--transition-fast); background: transparent;
+}
+.notif-toggle.is-on { background: var(--color-accent); border-color: var(--color-accent); justify-content: flex-end; }
+.notif-toggle.is-off { justify-content: flex-start; }
+.notif-toggle__knob { width: 23px; height: 23px; border-radius: 50%; background: var(--color-text-soft); display: block; }
+.notif-toggle.is-on .notif-toggle__knob { background: var(--color-accent-ink); }
+
+.profile-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.profile-actions .danger { padding: 15px 24px; border-radius: var(--radius-pill); background: transparent; border: 1px solid var(--border-soft); color: var(--color-text-faint); font-size: 14px; font-weight: 700; transition: all var(--transition-fast); }
+.profile-actions .danger:hover { border-color: rgba(224, 161, 151, .4); color: #E0A197; }
+
+.address-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 20px; }
+.address-card { background: #1C1916; border: 1px solid var(--border-subtle); border-radius: 22px; padding: 22px 24px; display: flex; flex-direction: column; }
+.address-card__head { display: flex; align-items: center; gap: 10px; }
+.address-card__label { font-size: 15.5px; font-weight: 800; flex: 1; }
+.address-card__default { background: rgba(245, 132, 53, .15); color: var(--color-promo-link); border-radius: var(--radius-pill); padding: 5px 11px; font-size: 11px; font-weight: 800; }
+.address-card__text { font-size: 14px; line-height: 1.6; color: #B9B3A8; margin: 10px 0 0; flex: 1; }
+.address-card__zone { font-size: 12.5px; color: var(--color-text-dim); margin-top: 10px; }
+.address-card__actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border-subtle); }
+.address-card__actions button { padding: 10px 16px; border-radius: var(--radius-pill); background: transparent; border: 1px solid var(--border-medium); color: var(--color-text-soft); font-size: 12.5px; font-weight: 700; transition: all var(--transition-fast); }
+.address-card__actions button:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.address-card__actions button.danger:hover { border-color: rgba(224, 161, 151, .4); color: #E0A197; }
+.address-add {
+  background: transparent; border: 1px dashed var(--border-medium); border-radius: 22px; padding: 32px 24px;
+  color: var(--color-text-dim); font-size: 14.5px; font-weight: 700; min-height: 150px; transition: all var(--transition-fast);
+  display: flex; align-items: center; justify-content: center; text-align: center;
+}
+.address-add:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.address-note { font-size: 13px; line-height: 1.7; color: var(--color-text-dim); margin: 18px 0 0; max-width: 60ch; }
+.address-note a { color: var(--color-text-dim); text-decoration: underline; }
+

@@ -1,0 +1,70 @@
+/*
+  DELIVERY.CSS — стилі сторінки "Доставка" (/delivery.html).
+  Перевикористовує .menu-about/.zones-card (menu.css) та .compare-table (philadelphia.css)
+  для однакового вигляду таблиць по всьому сайту.
+*/
+
+.delivery-stats { display: flex; flex-wrap: wrap; gap: 12px; }
+.delivery-stat { flex: 1 1 100px; background: #1C1916; border: 1px solid var(--border-subtle); border-radius: 18px; padding: 14px 16px; }
+.delivery-stat b { display: block; font-family: var(--font-heading); font-weight: 400; font-size: 24px; white-space: nowrap; }
+.delivery-stat span { display: block; font-size: 12.5px; color: var(--color-text-dim); margin-top: 4px; }
+
+.zone-chip-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+.zone-chip {
+  padding: 10px 16px; border-radius: var(--radius-pill); border: 1px solid var(--border-medium);
+  background: transparent; color: var(--color-text-soft); font-size: 13.5px; font-weight: 600;
+  transition: all var(--transition-fast);
+}
+.zone-chip:hover, .zone-chip.is-active { border-color: var(--color-accent); color: var(--color-accent); }
+
+.zone-feature-row { display: flex; flex-wrap: wrap; gap: clamp(16px, 2.4vw, 26px); margin-top: 22px; align-items: stretch; }
+.zone-feature-card {
+  flex: 1 1 320px; min-width: 0;
+  background: linear-gradient(155deg, #1F1A16, #16130F);
+  border: 1px solid rgba(245, 132, 53, .22);
+  border-radius: 26px; padding: clamp(22px, 3vw, 30px);
+  display: flex; flex-direction: column;
+}
+.zone-feature-card__badge { font-size: 11.5px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; color: var(--color-accent-soft); }
+.zone-feature-card h3 { font-size: clamp(24px, 2.8vw, 32px); margin: 12px 0 0; }
+.zone-feature-card p { font-size: 14.5px; line-height: 1.65; color: var(--color-text-muted); margin: 12px 0 0; flex: 1; }
+.zone-feature-card__stats { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.zone-feature-card__stat { flex: 1 1 150px; background: rgba(255, 255, 255, .04); border: 1px solid var(--border-soft); border-radius: 16px; padding: 14px 16px; }
+.zone-feature-card__stat b { display: block; font-family: var(--font-heading); font-weight: 400; font-size: 23px; white-space: nowrap; }
+.zone-feature-card__stat span { display: block; font-size: 12px; color: var(--color-text-dim); margin-top: 4px; }
+
+.zone-illustration {
+  flex: 1 1 300px; min-width: 0; position: relative; border-radius: 26px; overflow: hidden;
+  border: 1px solid var(--border-subtle); min-height: 320px;
+  background: radial-gradient(circle at 30% 20%, rgba(245, 132, 53, .16), transparent 55%), #171412;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; padding: 24px;
+}
+.zone-illustration__num { font-family: var(--font-heading); font-size: 56px; color: var(--color-accent); }
+.zone-illustration__label { font-size: 14px; color: var(--color-text-soft); max-width: 24ch; }
+
+.steps-simple-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 20px; }
+.step-simple { background: #1C1916; border: 1px solid var(--border-subtle); border-radius: 22px; padding: 22px 24px; }
+.step-simple__num { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: rgba(245, 132, 53, .13); color: var(--color-accent-soft); font-size: 14px; font-weight: 800; }
+.step-simple h3 { font-size: 16px; font-weight: 800; margin: 14px 0 0; font-family: var(--font-body); }
+.step-simple p { font-size: 13.5px; line-height: 1.65; color: var(--color-text-dim); margin: 8px 0 0; }
+
+.payment-section { display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 40px); align-items: flex-start; }
+.payment-main { flex: 999 1 380px; min-width: 0; }
+.payment-main > p { font-size: 15px; line-height: 1.7; color: var(--color-text-muted); margin: 14px 0 0; max-width: 60ch; }
+.payment-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 20px; }
+.payment-card { background: #1C1916; border: 1px solid var(--border-subtle); border-radius: 18px; padding: 18px 20px; }
+.payment-card h3 { font-size: 15px; font-weight: 800; margin: 0; font-family: var(--font-body); }
+.payment-card p { font-size: 13px; line-height: 1.6; color: var(--color-text-dim); margin: 7px 0 0; }
+.payment-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.payment-badges span { padding: 8px 14px; border: 1px solid var(--border-soft); border-radius: 10px; font-size: 12px; font-weight: 700; color: var(--color-text-muted); }
+
+.pickup-box { flex: 1 1 300px; background: linear-gradient(150deg, #2A1710, #1C1916); border: 1px solid rgba(245, 132, 53, .2); border-radius: 26px; padding: clamp(22px, 3vw, 30px); }
+.pickup-box__badge { font-size: 11.5px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; color: var(--color-accent-soft); }
+.pickup-box h2 { font-size: clamp(23px, 2.6vw, 30px); margin: 12px 0 0; }
+.pickup-box > p { font-size: 14.5px; line-height: 1.7; color: var(--color-text-muted); margin: 12px 0 0; }
+.pickup-box__rows { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+.pickup-box__row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font-size: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border-subtle); }
+.pickup-box__row:last-child { border-bottom: none; padding-bottom: 0; }
+.pickup-box__row span { color: var(--color-text-dim); }
+.pickup-box a.related-link,
+.pickup-box__cta { display: inline-flex; align-items: center; gap: 9px; margin-top: 20px; font-size: 14px; font-weight: 700; color: var(--color-accent); }

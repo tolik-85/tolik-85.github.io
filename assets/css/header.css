@@ -1,0 +1,241 @@
+/*
+  HEADER.CSS — стилі шапки сайту (топ-бар, лого, пошук, дії).
+  Розмітка шапки: /src/partials/header.html (вставляється build.js у кожну сторінку).
+*/
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  background: rgba(19, 17, 16, .84);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* ---------- Топ-рядок (місто/години/доставка) ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.4vw, 20px);
+  flex-wrap: wrap;
+  padding: 8px 0 0;
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+}
+.topbar__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.topbar__item strong,
+.topbar__item b { color: var(--color-text); font-weight: 700; }
+.topbar__item--push { margin-left: auto; }
+.topbar__discount { color: var(--color-accent-soft); font-weight: 700; }
+
+.pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-success);
+  animation: pulse 2.4s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .35; }
+}
+
+/* ---------- Рядок лого / пошук / телефон / дії ---------- */
+.header-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2.2vw, 26px);
+  flex-wrap: wrap;
+  padding: 12px 0 14px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: none;
+}
+.logo__mark {
+  position: relative;
+  width: 42px;
+  height: 44px;
+  flex: none;
+  display: block;
+}
+.logo__mark span { position: absolute; border-radius: 50%; background: var(--color-text); }
+.logo__ear-l { top: 0; left: 1px; width: 13px; height: 13px; }
+.logo__ear-r { top: 0; right: 1px; width: 13px; height: 13px; }
+.logo__face { top: 5px; left: 1px; width: 40px; height: 39px; }
+.logo__eye-l { top: 19px; left: 12px; width: 6px; height: 8px; background: var(--color-bg) !important; }
+.logo__eye-r { top: 19px; right: 12px; width: 6px; height: 8px; background: var(--color-bg) !important; }
+.logo__nose {
+  bottom: 0;
+  right: -1px;
+  width: 11px;
+  height: 11px;
+  background: var(--color-accent) !important;
+  border: 2px solid var(--color-bg);
+}
+.logo__text { display: flex; flex-direction: column; gap: 2px; }
+.logo__name { font-family: var(--font-heading); font-size: 19px; line-height: 1; letter-spacing: .02em; }
+.logo__tag { font-size: 10.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--color-text-dim); }
+
+.header-search {
+  position: relative;
+  flex: 1 1 240px;
+  min-width: 170px;
+}
+.header-search__icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.header-search input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 18px 12px 42px;
+  background: var(--color-surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-pill);
+  color: var(--color-text);
+  font-size: 14px;
+  outline: none;
+}
+.header-search input::placeholder { color: var(--color-text-faint); }
+
+.header-phone { display: flex; flex-direction: column; gap: 1px; flex: none; }
+.header-phone__number { font-weight: 800; font-size: 15px; letter-spacing: .02em; }
+.header-phone__note { font-size: 11px; color: var(--color-text-dim); }
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: none;
+  margin-left: auto;
+}
+
+.icon-btn {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--border-medium);
+  color: var(--color-text-soft);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+.icon-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+
+.badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  min-width: 17px;
+  height: 17px;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  font-size: 10.5px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+.cart-btn { position: relative; }
+.badge--cart {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 19px;
+  height: 19px;
+  border-radius: var(--radius-pill);
+  background: var(--color-bg-alt);
+  color: var(--color-accent);
+  font-size: 11px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  border: 1px solid rgba(245, 132, 53, .5);
+}
+/* Баг: .badge/.badge--cart самі задають display, а авторський CSS завжди
+   переважає над UA-стилем [hidden]{display:none} — незалежно від specificity
+   чи порядку. Тому бейдж "0" лишався видимим навіть з атрибутом hidden.
+   Явний override нижче повертає очікувану поведінку скрізь, де ці класи
+   використовуються (#cartBadge в шапці, #mobileCartBadge в нижній панелі). */
+.badge[hidden],
+.badge--cart[hidden] { display: none; }
+
+/* ---------- Головна навігація ---------- */
+.main-nav { border-top: 1px solid var(--border-subtle); }
+.main-nav__inner {
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+}
+.main-nav__link {
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-soft);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+.main-nav__link:hover { color: var(--color-text); }
+.main-nav__link.is-active {
+  font-weight: 700;
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+.main-nav__link--accent { font-weight: 700; color: var(--color-promo-link); }
+
+/* ---------- Бургер-кнопка й мобільне меню (< 860px) ---------- */
+.burger-btn { display: none; }
+
+@media (max-width: 860px) {
+  .header-phone { display: none; }
+
+  /* Другорядний пункт топбару («Самовивіз −10%») прибираємо на мобільному —
+     звужує топбар з 3 рядків до 1-2, а знижка й так дублюється на сторінці
+     доставки й у картках категорій. Місто/години/час доставки лишаються. */
+  .topbar__item--push { display: none; }
+
+  /* Кнопка кошика в шапці на мобільному — прибрана повністю: тепер кошик
+     відкривається з нижньої панелі (.mobile-tabbar, mobile-tabbar.css) —
+     єдине місце виклику, без дублювання (той самий принцип, що й для
+     категорій/бургера). TODO #7 (компактна шапка на невисоких мобільних)
+     лишається чинним і без цієї кнопки — навіть простіше: рядок логотип +
+     бургер тепер точно не ламається на 2 рядки. */
+  .cart-btn { display: none; }
+
+  .burger-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border-medium);
+    color: var(--color-text-soft);
+  }
+  /* Горизонтальна .main-nav (десктопний рядок пунктів) на мобільному більше
+     не потрібна: бургер відкриває поп-ап #navDrawer (mobile-tabbar.css,
+     .mega-menu__panel) поверх контенту замість розкриття цього рядка на
+     всю висоту — той старий механізм ("виїжджання"/розсування сторінки
+     вниз через grid-template-rows) прибраний повністю. */
+  .main-nav { display: none; }
+}

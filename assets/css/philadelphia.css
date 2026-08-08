@@ -1,0 +1,56 @@
+/*
+  PHILADELPHIA.CSS — стилі лендингу-підбірки "Роли Філадельфія" (/philadelphia.html).
+  Перевикористовує .product-card (home.css) та .menu-about/.zones-card/.related-block/
+  .menu-faq-item (menu.css) — тут лише унікальні для цієї сторінки блоки.
+*/
+
+.collection-hero { display: flex; flex-wrap: wrap; gap: clamp(24px, 4vw, 56px); align-items: center; padding: clamp(20px, 3vw, 38px) 0 0; }
+.collection-hero__main { flex: 999 1 400px; min-width: 0; }
+.collection-hero__badge {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--color-surface); border: 1px solid var(--border-soft); border-radius: var(--radius-pill);
+  padding: 8px 16px; font-size: 12.5px; font-weight: 700; letter-spacing: .05em; color: var(--color-accent-soft);
+}
+.collection-hero h1 { font-size: clamp(30px, 4.4vw, 54px); line-height: 1.08; margin: 18px 0 0; }
+.collection-hero__lede { font-size: 16.5px; line-height: 1.7; color: var(--color-text-muted); max-width: 58ch; margin: 16px 0 0; }
+.collection-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.collection-hero__stats { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.collection-hero__stat { flex: 1 1 130px; background: #1C1916; border: 1px solid var(--border-subtle); border-radius: 18px; padding: 14px 16px; }
+.collection-hero__stat b { display: block; font-family: var(--font-heading); font-weight: 400; font-size: 24px; }
+.collection-hero__stat span { display: block; font-size: 12.5px; color: var(--color-text-dim); margin-top: 4px; }
+
+.collection-hero__visual { flex: 1 1 300px; position: relative; }
+.collection-hero__img-wrap { position: relative; display: block; width: 100%; aspect-ratio: 1 / 1; border-radius: 28px; overflow: hidden; }
+.collection-hero__img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.collection-hero__float {
+  position: absolute; bottom: -14px; left: -10px;
+  background: rgba(26, 23, 20, .94); backdrop-filter: blur(10px); border: 1px solid var(--border-soft);
+  border-radius: 16px; padding: 12px 16px; box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+  display: flex; align-items: center; gap: 14px;
+}
+.collection-hero__float b { display: block; font-size: 13px; font-weight: 800; }
+.collection-hero__float span { display: block; font-size: 12px; color: var(--color-text-dim); margin-top: 3px; }
+.collection-hero__float .add-to-cart-btn { flex: none; margin-left: 0; width: 34px; height: 34px; font-size: 18px; }
+
+.dishes-hint { font-size: 14.5px; color: var(--color-text-dim); margin: 10px 0 0; }
+
+.compare-lede { font-size: 14.5px; color: var(--color-text-dim); margin: 10px 0 0; max-width: 62ch; }
+.compare-wrap { overflow-x: auto; margin-top: 20px; background: #1C1916; border: 1px solid var(--border-subtle); border-radius: 22px; }
+.compare-table { width: 100%; border-collapse: collapse; }
+.compare-table th {
+  text-align: left; font-size: 11.5px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--color-text-dim); padding: 16px 18px; border-bottom: 1px solid var(--border-medium); white-space: nowrap;
+}
+.compare-table th:last-child { text-align: right; }
+.compare-table td { padding: 15px 18px; border-bottom: 1px solid var(--border-subtle); font-size: 14px; color: #B9B3A8; }
+.compare-table td:first-child { font-weight: 700; color: var(--color-text); white-space: nowrap; }
+.compare-table td:last-child { text-align: right; font-weight: 700; color: var(--color-accent-soft); white-space: nowrap; }
+
+.review-figure { margin: 0; background: #1C1916; border: 1px solid var(--border-subtle); border-radius: 22px; padding: 22px 24px; display: flex; flex-direction: column; gap: 12px; }
+.review-figure figcaption { display: flex; align-items: center; gap: 12px; }
+.review-figure__avatar { width: 40px; height: 40px; flex: none; border-radius: 50%; background: #2A2622; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 800; color: var(--color-text-soft); }
+.review-figure__name { display: block; font-size: 14.5px; font-weight: 700; }
+.review-figure__date { display: block; font-size: 12px; color: var(--color-text-dim); margin-top: 2px; }
+.review-figure__stars { font-size: 12.5px; color: var(--color-accent); letter-spacing: .06em; margin-left: auto; }
+.review-figure blockquote { margin: 0; font-size: 14.5px; line-height: 1.7; color: #B9B3A8; }
+.review-figure__dish { font-size: 12.5px; color: var(--color-text-dim); }

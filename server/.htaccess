@@ -1,0 +1,70 @@
+# .htaccess — приклад конфігурації для Apache (сайт pandasushi.od.ua)
+#
+# Покладіть цей файл у корінь сайту на сервері (поруч з index.html), якщо
+# хостинг працює на Apache. Потребує увімкнених модулів: mod_headers,
+# mod_deflate, mod_expires, mod_rewrite (стандартно увімкнені на більшості
+# хостингів — якщо директиви не спрацьовують, попросіть хостинг увімкнути
+# ці модулі).
+
+# ---------- Примусовий HTTPS і канонічний домен (без www) ----------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://pandasushi.od.ua%{REQUEST_URI} [L,R=301]
+
+  RewriteCond %{HTTP_HOST} ^www\.pandasushi\.od\.ua$ [NC]
+  RewriteRule ^ https://pandasushi.od.ua%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# ---------- Security-заголовки ----------
+# CSP: style-src з 'unsafe-inline', бо частина сторінок використовує
+# інлайн-стилі для одноразових значень; script-src без 'unsafe-inline' —
+# увесь JS підключається файлами, інлайн-обробників подій немає.
+<IfModule mod_headers.c>
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+  Header unset X-Powered-By
+</IfModule>
+
+# ---------- Стиснення тексту ----------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain text/css application/javascript application/json image/svg+xml application/manifest+json application/xml text/xml
+</IfModule>
+
+# ---------- Кешування статики ----------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType font/woff2 "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType application/manifest+json "access plus 1 day"
+</IfModule>
+
+# ---------- Закрити службові папки й приховані файли ----------
+RedirectMatch 404 ^/src/
+RedirectMatch 404 ^/build/
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+# ---------- Секрети Telegram-форм: telegram-config.php ----------
+# Сам по собі файл і так безпечний (лише `return [...]`, нічого не echo'ить,
+# при прямому відкритті URL віддасть порожню сторінку) — цей блок додатковий
+# захисний шар, щоб пряме звернення взагалі не доходило до PHP.
+<Files "telegram-config.php">
+  Require all denied
+</Files>
+
+# ---------- Вимкнути листинг директорій ----------
+Options -Indexes
+
+# ---------- Чиста сторінка 404 ----------
+ErrorDocument 404 /404.html

@@ -1,0 +1,42 @@
+/*
+  ERROR-PAGE.CSS — стилі сторінки 404 (/404.html).
+  Мінімалістичний макет за референсом користувача: великі фірмові оранжеві
+  цифри «404» + короткий заголовок/підпис + одна кнопка «На головну» + мавка-
+  ілюстрація праворуч. Без пошуку/додаткових розділів — навмисно прибрано.
+*/
+
+.error-hero { display: flex; flex-wrap: wrap; gap: clamp(30px, 5vw, 70px); align-items: center; justify-content: center; padding: clamp(30px, 6vw, 70px) 0; min-height: 82vh; }
+.error-hero__main { flex: 1 1 380px; max-width: 600px; }
+.error-hero__digits {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: clamp(110px, 16vw, 220px);
+  line-height: .86;
+  letter-spacing: -.02em;
+  color: var(--color-accent);
+  text-shadow: 0 0 90px rgba(245, 132, 53, .45);
+  margin: 0;
+}
+.error-hero__lead { font-family: var(--font-heading); font-weight: 400; font-size: clamp(24px, 3.4vw, 36px); line-height: 1.2; color: var(--color-text); margin: 16px 0 0; }
+.error-hero__text { font-size: 16.5px; line-height: 1.7; color: var(--color-text-muted); margin: 16px 0 0; max-width: 48ch; }
+.error-hero__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; }
+
+.error-visual { flex: 1 1 420px; max-width: 620px; display: flex; justify-content: center; }
+.error-visual__inner { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.error-photo-wrap { position: relative; width: min(480px, 62vw); aspect-ratio: 885 / 1063; }
+.error-photo-glow { position: absolute; inset: -12%; border-radius: 50%; background: radial-gradient(circle at 50% 45%, rgba(245, 132, 53, .28), transparent 62%); z-index: -1; }
+.error-photo {
+  display: block; width: 100%; height: 100%; object-fit: contain;
+  filter: drop-shadow(0 26px 40px rgba(0, 0, 0, .5));
+}
+.error-chip {
+  background: rgba(245, 132, 53, .14); border: 1px solid rgba(245, 132, 53, .3); color: var(--color-accent-soft);
+  border-radius: var(--radius-pill); padding: 9px 20px; font-family: var(--font-heading); font-size: clamp(18px, 2.4vw, 24px); white-space: nowrap;
+}
+
+/* Чиста шапка на сторінці помилки: за референсом користувача (кружечок навколо
+   лого + перекреслені іконки кошика/акаунту праворуч) кнопка кошика на цій
+   сторінці не показується — лишається тільки лого й головна навігація. Лого
+   вже те саме, що на головній (спільний .logo-компонент з header.html), тому
+   заміни розмітки не потрібно, лише приховати кнопку кошика через bodyClass. */
+.page-error #cartButton { display: none; }

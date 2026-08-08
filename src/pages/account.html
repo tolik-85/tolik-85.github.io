@@ -1,0 +1,198 @@
+<!--
+title: Особистий кабінет | Панда Суші
+description: Особистий кабінет Панда Суші — замовлення, профіль, адреси доставки.
+canonical: /account.html
+ogImage: /assets/images/home/hero-set.jpg
+bodyClass: page-account
+css: account
+js: forms
+noindex: true
+-->
+<div class="container">
+  <nav class="breadcrumbs" aria-label="Навігаційний ланцюжок">
+    <a href="/">Головна</a><span>/</span><span aria-current="page">Особистий кабінет</span>
+  </nav>
+
+  <p class="account-demo-banner">Це демо-перегляд особистого кабінету з прикладними даними — реальний вхід за номером телефону та збереження даних підключаються разом із бекендом.</p>
+
+  <section class="account-head">
+    <h1>Доброго дня, Марія!</h1>
+    <p>Тут — ваші замовлення, збережені адреси й профіль.</p>
+  </section>
+
+  <div class="account-layout">
+    <aside class="account-sidebar">
+      <nav class="account-tabs" aria-label="Розділи кабінету">
+        <a href="#orders" class="account-tab is-active"><span>Мої замовлення</span><span>1 активне</span></a>
+        <a href="#profile" class="account-tab"><span>Профіль</span></a>
+        <a href="#addresses" class="account-tab"><span>Мої адреси</span><span>2</span></a>
+      </nav>
+      <a href="/" class="account-logout">Вийти з акаунту</a>
+    </aside>
+
+    <div class="account-main">
+      <section id="orders">
+        <div class="account-section-head">
+          <h2 style="margin:0;font-size:clamp(22px,2.6vw,30px)">Мої замовлення</h2>
+          <span>12 усього</span>
+        </div>
+
+        <div class="active-order">
+          <span class="active-order__glow" aria-hidden="true"></span>
+          <div class="active-order__top">
+            <div style="flex:999 1 260px;min-width:0">
+              <span class="active-order__badge">ЗАМОВЛЕННЯ В РОБОТІ</span>
+              <h3>№ 4189 · 1 349 ₴</h3>
+              <p class="active-order__items">Філадельфія класична, Сет «Лосось Максі», Місо-суп</p>
+            </div>
+            <div style="flex:1 1 170px;text-align:right">
+              <div class="active-order__eta-label">Орієнтовно у вас</div>
+              <div class="active-order__eta">~18:40</div>
+            </div>
+          </div>
+          <div class="active-order__progress">
+            <span class="is-done"></span><span class="is-done"></span><span class="is-done"></span><span></span>
+          </div>
+          <div class="active-order__steps">
+            <span class="is-done">Прийнято</span><span class="is-done">Готується</span><span class="is-done">Кур'єр в дорозі</span><span>Доставлено</span>
+          </div>
+          <div class="active-order__actions">
+            <a href="tel:+380973981846" class="btn btn-primary">Зателефонувати оператору</a>
+            <button type="button" class="btn btn-ghost">Деталі замовлення</button>
+          </div>
+        </div>
+
+        <div class="order-list">
+          <div class="order-card">
+            <div class="order-card__row">
+              <div class="order-card__main">
+                <div class="order-card__meta">
+                  <span class="order-card__num">№ 4156</span>
+                  <span class="order-card__status" style="background:rgba(93,179,136,.14);color:#8FD1AF">Виконано</span>
+                  <span class="order-card__date">27 липня</span>
+                </div>
+                <p class="order-card__items">Каліфорнія, Дракон, Місо-суп з лососем</p>
+                <div class="order-card__address">вул. Дерибасівська, 15, кв. 8</div>
+              </div>
+              <div class="order-card__side">
+                <div><div class="order-card__sum">742 ₴</div></div>
+                <div class="order-card__actions">
+                  <button type="button">Повторити</button>
+                  <button type="button">Чек</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order-card">
+            <div class="order-card__row">
+              <div class="order-card__main">
+                <div class="order-card__meta">
+                  <span class="order-card__num">№ 4098</span>
+                  <span class="order-card__status" style="background:rgba(93,179,136,.14);color:#8FD1AF">Виконано</span>
+                  <span class="order-card__date">14 липня</span>
+                </div>
+                <p class="order-card__items">Сет «Панда» 25 шт</p>
+                <div class="order-card__address">вул. Дерибасівська, 15, кв. 8</div>
+              </div>
+              <div class="order-card__side">
+                <div><div class="order-card__sum">1 199 ₴</div></div>
+                <div class="order-card__actions">
+                  <button type="button">Повторити</button>
+                  <button type="button">Чек</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order-card">
+            <div class="order-card__row">
+              <div class="order-card__main">
+                <div class="order-card__meta">
+                  <span class="order-card__num">№ 4033</span>
+                  <span class="order-card__status" style="background:rgba(217,80,63,.12);color:#E98973">Скасовано</span>
+                  <span class="order-card__date">2 липня</span>
+                </div>
+                <p class="order-card__items">Веган Авокадо, Поке з тофу</p>
+                <div class="order-card__address">Офіс, вул. Катерининська, 22</div>
+              </div>
+              <div class="order-card__side">
+                <div><div class="order-card__sum">478 ₴</div></div>
+                <div class="order-card__actions">
+                  <button type="button">Замовити знову</button>
+                  <button type="button">Чек</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="profile">
+        <h2 style="margin:0;font-size:clamp(22px,2.6vw,30px)">Профіль</h2>
+        <form data-stub-form data-success-message="Профіль збережено (демо-режим — зміни не зберігаються без бекенду).">
+          <label class="form-honeypot" aria-hidden="true">Не заповнюйте це поле<input type="text" name="company" tabindex="-1" autocomplete="off" data-honeypot></label>
+          <div class="profile-card">
+            <div class="profile-grid">
+              <label class="profile-field"><span>Ім'я</span><input type="text" name="name" value="Марія Коваль"></label>
+              <label class="profile-field"><span>Телефон</span><input type="tel" name="profile-phone" value="+380 67 123 45 67" disabled></label>
+              <label class="profile-field"><span>Email — для чеків</span><input type="email" name="email" placeholder="name@mail.com" autocomplete="email"></label>
+              <label class="profile-field"><span>День народження — подарунок від нас</span><input type="text" name="birthday" placeholder="дд.мм.рррр"></label>
+            </div>
+            <p class="profile-card__note">Номер телефону змінити не можна — це ідентифікатор акаунту. Напишіть нам, якщо він змінився.</p>
+          </div>
+
+          <div class="notif-card">
+            <h3>Повідомлення</h3>
+            <div class="notif-row">
+              <span class="notif-row__text"><span class="notif-row__title">Статус замовлення</span><span class="notif-row__desc">SMS і Telegram про кожен крок доставки</span></span>
+              <span class="notif-toggle is-on" role="switch" aria-checked="true" aria-label="Статус замовлення"><span class="notif-toggle__knob"></span></span>
+            </div>
+            <div class="notif-row">
+              <span class="notif-row__text"><span class="notif-row__title">Акції та промокоди</span><span class="notif-row__desc">Не частіше двох повідомлень на тиждень</span></span>
+              <span class="notif-toggle is-on" role="switch" aria-checked="true" aria-label="Акції та промокоди"><span class="notif-toggle__knob"></span></span>
+            </div>
+            <div class="notif-row">
+              <span class="notif-row__text"><span class="notif-row__title">Новини блогу</span><span class="notif-row__desc">Нові статті кухні раз на тиждень</span></span>
+              <span class="notif-toggle is-off" role="switch" aria-checked="false" aria-label="Новини блогу"><span class="notif-toggle__knob"></span></span>
+            </div>
+          </div>
+
+          <div class="profile-actions">
+            <button type="submit" class="btn btn-primary">Зберегти зміни</button>
+            <button type="button" class="danger">Видалити акаунт і дані</button>
+          </div>
+          <p class="form-status" data-form-status hidden tabindex="-1"></p>
+        </form>
+      </section>
+
+      <section id="addresses">
+        <div class="account-section-head">
+          <h2 style="margin:0;font-size:clamp(22px,2.6vw,30px)">Мої адреси</h2>
+          <span>2 збережено</span>
+        </div>
+        <div class="address-grid">
+          <div class="address-card">
+            <div class="address-card__head"><span class="address-card__label">Дім</span><span class="address-card__default">ОСНОВНА</span></div>
+            <p class="address-card__text">вул. Дерибасівська, 15, кв. 8, під'їзд 2, домофон 08</p>
+            <div class="address-card__zone">Зона: Центр · доставка 40–50 хв</div>
+            <div class="address-card__actions">
+              <button type="button">Змінити</button>
+              <button type="button" class="danger">Видалити</button>
+            </div>
+          </div>
+          <div class="address-card">
+            <div class="address-card__head"><span class="address-card__label">Офіс</span></div>
+            <p class="address-card__text">вул. Катерининська, 22, 3 поверх, ресепшн</p>
+            <div class="address-card__zone">Зона: Центр · доставка 40–50 хв</div>
+            <div class="address-card__actions">
+              <button type="button">Зробити основною</button>
+              <button type="button">Змінити</button>
+              <button type="button" class="danger">Видалити</button>
+            </div>
+          </div>
+          <button type="button" class="address-add">+ Додати адресу</button>
+        </div>
+        <p class="address-note">Зона доставки визначається автоматично за адресою — вартість і мінімальну суму побачите на сторінці <a href="/delivery.html">Доставка</a>.</p>
+      </section>
+    </div>
+  </div>
+</div>

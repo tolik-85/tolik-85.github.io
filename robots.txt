@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /account.html
+Disallow: /404.html
+Disallow: /src/
+Disallow: /build/
+
+Sitemap: https://pandasushi.od.ua/sitemap.xml

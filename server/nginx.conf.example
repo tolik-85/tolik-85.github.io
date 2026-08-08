@@ -1,0 +1,131 @@
+# nginx.conf.example — приклад конфігурації для сайту pandasushi.od.ua
+#
+# Це ЗРАЗОК для адміністратора сервера, не файл, який просто копіюють без
+# перевірки. Підставте свої шляхи до SSL-сертифікатів і, за потреби,
+# скоригуйте домен. Підключіть як окремий server-блок або через include
+# у вашому основному nginx.conf / sites-available.
+#
+# Що тут налаштовано:
+#   1. Примусовий HTTPS-редирект з HTTP
+#   2. Security-заголовки (CSP, HSTS, X-Content-Type-Options тощо)
+#   3. Стиснення тексту (gzip) для швидшого завантаження
+#   4. Кешування статичних файлів у браузері
+#   5. Чиста сторінка 404 замість стандартної nginx-заглушки
+#   6. Заборона листингу директорій і доступу до службових папок (src/, build/)
+
+# ---------- HTTP → HTTPS ----------
+server {
+    listen 80;
+    listen [::]:80;
+    server_name pandasushi.od.ua www.pandasushi.od.ua;
+    return 301 https://pandasushi.od.ua$request_uri;
+}
+
+# ---------- www → без www (канонічний домен) ----------
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name www.pandasushi.od.ua;
+
+    ssl_certificate     /etc/letsencrypt/live/pandasushi.od.ua/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/pandasushi.od.ua/privkey.pem;
+
+    return 301 https://pandasushi.od.ua$request_uri;
+}
+
+# ---------- Основний сервер ----------
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name pandasushi.od.ua;
+
+    root /var/www/pandasushi/site;
+    index index.html;
+
+    ssl_certificate     /etc/letsencrypt/live/pandasushi.od.ua/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/pandasushi.od.ua/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers on;
+
+    # ---------- Security-заголовки ----------
+    # CSP: script-src без 'unsafe-inline' — весь JS підключається файлами
+    # (/assets/js/*.js), інлайн-обробників подій (onclick тощо) у розмітці
+    # немає. style-src з 'unsafe-inline' — сайт місцями використовує
+    # інлайн-стилі для одноразових значень flex/grid; якщо це прибрати
+    # (винести все у класи), можна прибрати і 'unsafe-inline' з style-src.
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests" always;
+    add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "DENY" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()" always;
+    add_header X-XSS-Protection "0" always; # застаріле, поклад. на CSP; вимкнено, щоб не заважав
+
+    # Приховати версію nginx у заголовках і на сторінках помилок
+    server_tokens off;
+
+    # ---------- Стиснення ----------
+    gzip on;
+    gzip_vary on;
+    gzip_comp_level 6;
+    gzip_min_length 512;
+    gzip_types text/plain text/css application/javascript application/json image/svg+xml application/manifest+json application/xml text/xml;
+
+    # ---------- Кешування статики ----------
+    # CSS/JS/шрифти змінюються нечасто, але імена файлів не хешуються —
+    # тому кеш поміркований (7 днів), а не рік. Якщо додасте хешування імен
+    # файлів у build.js, тут можна сміливо ставити "1y" з immutable.
+    location ~* \.(?:css|js)$ {
+        expires 7d;
+        add_header Cache-Control "public, max-age=604800";
+    }
+    location ~* \.(?:woff2?|ttf|otf)$ {
+        expires 30d;
+        add_header Cache-Control "public, max-age=2592000, immutable";
+        add_header Access-Control-Allow-Origin "*"; # для коректного завантаження шрифтів
+    }
+    location ~* \.(?:jpg|jpeg|png|webp|svg|gif|ico)$ {
+        expires 30d;
+        add_header Cache-Control "public, max-age=2592000";
+    }
+    location = /sitemap.xml { expires 1d; }
+    location = /robots.txt  { expires 1d; }
+
+    # ---------- Службові папки — закрити доступ ----------
+    # /src і /build потрібні лише на етапі розробки (build.js), у деплой
+    # їх можна не завантажувати взагалі; про всяк випадок — забороняємо тут.
+    location ^~ /src/ { deny all; return 404; }
+    location ^~ /build/ { deny all; return 404; }
+    location ~ /\. { deny all; return 404; } # приховані файли (.git, .env тощо)
+
+    # ---------- PHP (форми → Telegram) ----------
+    # КРИТИЧНО: без цього блоку nginx віддає *.php як звичайний текст —
+    # разом із токеном у telegram-config.php. Шлях до сокета підставте
+    # свій (версія php-fpm може відрізнятися: php8.1/8.2/8.3-fpm.sock).
+    location = /api/telegram-config.php { deny all; return 404; }
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+    }
+
+    # ---------- Rate limit для форм (опційно, але рекомендовано) ----------
+    # Зона оголошується в http{}-контексті основного nginx.conf:
+    #   limit_req_zone $binary_remote_addr zone=psforms:1m rate=6r/m;
+    # і тоді PHP-location вище замінюється на:
+    #   location = /api/send-to-telegram.php {
+    #       limit_req zone=psforms burst=3 nodelay;
+    #       include snippets/fastcgi-php.conf;
+    #       fastcgi_pass unix:/run/php/php8.2-fpm.sock;
+    #   }
+    # (у самому PHP вже є власний файловий rate limit — це другий шар)
+
+    # ---------- Чиста сторінка 404 ----------
+    error_page 404 /404.html;
+    location = /404.html { internal; }
+
+    # ---------- Основна маршрутизація ----------
+    location / {
+        try_files $uri $uri.html $uri/ =404;
+    }
+}

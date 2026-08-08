@@ -1,0 +1,65 @@
+/*
+  ROLLS.CSS — стилі каталогу "Роли" (/rolls.html): сайдбар + сітка товарів
+  з клієнтським сортуванням/фільтрацією (/assets/js/rolls.js).
+*/
+
+.catalog-head { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(20px, 3vw, 44px); align-items: end; padding: 22px 0 8px; }
+.catalog-head h1 { font-size: clamp(30px, 4vw, 50px); line-height: 1.1; }
+.catalog-head__lede { font-size: 15.5px; line-height: 1.65; color: var(--color-text-muted); max-width: 60ch; margin: 14px 0 0; }
+.catalog-head__badges { display: flex; gap: 10px; flex-wrap: wrap; }
+.catalog-badge { display: inline-flex; align-items: center; gap: 8px; background: #1C1916; border: 1px solid var(--border-subtle); border-radius: 14px; padding: 11px 16px; font-size: 13px; }
+
+.catalog-layout { display: flex; flex-wrap: wrap; gap: clamp(20px, 2.6vw, 34px); align-items: flex-start; margin-top: 28px; }
+
+.catalog-sidebar { position: sticky; top: 180px; flex: 1 1 240px; max-width: 280px; display: flex; flex-direction: column; gap: 14px; }
+.sidebar-box { background: #1C1916; border: 1px solid var(--border-subtle); border-radius: 22px; padding: 12px; }
+.sidebar-box h2 { font-size: 11.5px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; color: var(--color-text-dim); margin: 8px 10px 12px; font-family: var(--font-body); }
+.sidebar-cats { display: flex; flex-direction: column; gap: 2px; }
+.sidebar-cats a { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px; border-radius: 12px; font-size: 14px; font-weight: 600; color: var(--color-text-soft); transition: background .18s; }
+.sidebar-cats a:hover { background: rgba(255, 255, 255, .05); }
+.sidebar-cats a.is-active { color: var(--color-accent); background: rgba(245, 132, 53, .08); font-weight: 700; }
+.sidebar-cats a span:last-child { font-size: 12px; color: var(--color-text-dim); font-weight: 600; }
+.sidebar-cats a.is-active span:last-child { color: var(--color-text-muted); }
+
+.sidebar-box--tags { padding: 20px; }
+.sidebar-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.sidebar-tags a { padding: 8px 13px; border-radius: var(--radius-pill); border: 1px solid var(--border-soft); font-size: 12.5px; color: var(--color-text-soft); }
+.sidebar-tags a:hover { border-color: var(--color-accent); color: var(--color-accent); }
+
+.sidebar-promo { background: linear-gradient(150deg, #2A1710, #1C1916); border: 1px solid rgba(245, 132, 53, .2); border-radius: 22px; padding: 20px; }
+.sidebar-promo h2 { font-family: var(--font-heading); font-weight: 400; font-size: 19px; margin: 0; text-transform: none; letter-spacing: 0; color: var(--color-text); }
+.sidebar-promo p { font-size: 13px; color: var(--color-text-muted); line-height: 1.6; margin: 8px 0 14px; }
+.sidebar-promo a { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: var(--color-accent); }
+
+.catalog-main { flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+.catalog-toolbar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.catalog-found { font-size: 13.5px; color: var(--color-text-dim); }
+.catalog-found b { color: var(--color-text); }
+.sort-row { display: flex; gap: 8px; flex-wrap: wrap; margin-left: auto; }
+.sort-btn, .filter-chip {
+  padding: 9px 15px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-medium);
+  background: transparent;
+  color: var(--color-text-soft);
+  font-size: 13px;
+  font-weight: 700;
+  transition: all var(--transition-fast);
+}
+.filter-chip { font-weight: 600; }
+.sort-btn:hover, .filter-chip:hover { border-color: var(--color-accent); color: var(--color-accent); }
+.sort-btn.is-active, .filter-chip.is-active { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-accent-ink); }
+.filter-row { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: clamp(14px, 1.6vw, 20px); }
+.catalog-grid .product-card[hidden] { display: none; }
+
+/* Сайдбар категорій на мобільному (<861px) прибрано повністю — раніше тут
+   був вбудований тоглл-перемикач "Категорії: {назва} ⌄" (TODO #14), але
+   після появи глобальної нижньої панелі .mobile-tabbar з тим самим списком
+   категорій (TODO #15) він один в один дублював те саме меню на сторінці.
+   Категорії на мобільному тепер відкриваються лише знизу. */
+@media (max-width: 860px) {
+  .catalog-layout { flex-direction: column; }
+  .catalog-sidebar { display: none; }
+}
