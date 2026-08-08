@@ -80,9 +80,14 @@
   gap: 14px;
   margin-top: 8px;
 }
-.product-popup__head h2 {
+/* Назва страви — <p>, а не <h2>: попап у DOM стоїть раніше за H1 сторінки
+   (див. коментар у cart.css). Шрифт — як у базового h2 з base.css. */
+.product-popup__head p {
   font-size: clamp(22px, 2.6vw, 30px);
+  font-family: var(--font-heading);
+  font-weight: 400;
   line-height: 1.15;
+  text-wrap: pretty;
   margin: 0;
 }
 
