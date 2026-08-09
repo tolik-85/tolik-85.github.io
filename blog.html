@@ -393,7 +393,7 @@
     <a href="/blog.html" class="topic-chip">Лайфхаки доставки</a>
   </nav>
 
-  <section aria-label="Головний матеріал">
+  <div>
     <a href="/article.html" class="blog-featured">
       <span class="blog-featured__text">
         <span class="blog-featured__tag">ГОЛОВНЕ ЗА МІСЯЦЬ</span>
@@ -407,7 +407,7 @@
         <img src="/assets/images/home/hit-philadelphia.jpg" alt="Свіжий лосось на кухні Панда Суші" width="400" height="300" fetchpriority="high">
       </span>
     </a>
-  </section>
+  </div>
 
   <section aria-label="Усі матеріали" class="section-sm">
     <div class="blog-list-head">
@@ -476,7 +476,7 @@
       <h2>Питання шефу</h2>
       <p>Не знайшли відповіді в статтях? Напишіть — Кенджі відповідає особисто, а найцікавіші питання стають наступними текстами.</p>
       <form class="ask-chef-form" data-stub-form data-form-type="ask-chef" data-success-message="Дякуємо за питання! Відповідаємо особисто протягом кількох днів — або дзвоніть одразу: 097 398 18 46.">
-        <label class="form-honeypot" aria-hidden="true">Не заповнюйте це поле<input type="text" name="company" tabindex="-1" autocomplete="off" data-honeypot></label>
+        <div class="form-honeypot" aria-hidden="true"><label>Не заповнюйте це поле<input type="text" name="company" tabindex="-1" autocomplete="off" data-honeypot></label></div>
         <label class="visually-hidden" for="askChefQuestion">Ваше питання</label>
         <textarea id="askChefQuestion" name="question" rows="2" placeholder="Ваше питання" required></textarea>
         <label class="visually-hidden" for="askChefEmail">Ваш email</label>
