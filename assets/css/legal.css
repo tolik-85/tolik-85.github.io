@@ -18,7 +18,7 @@
 .legal-layout { display: flex; flex-wrap: wrap; gap: clamp(26px, 4vw, 50px); align-items: flex-start; margin-top: clamp(30px, 4vw, 44px); }
 .legal-sidebar { flex: 1 1 240px; position: sticky; top: 100px; }
 .legal-sidebar-box { background: #1C1916; border: 1px solid var(--border-subtle); border-radius: 22px; padding: 20px 22px; }
-.legal-sidebar-box h2 { font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--color-text-faint); margin: 0 0 12px; font-family: var(--font-body); }
+.legal-sidebar-box h2, .legal-sidebar-box__title { font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--color-text-faint); margin: 0 0 12px; font-family: var(--font-body); }
 .legal-sidebar-box + .legal-sidebar-box { margin-top: 14px; }
 .legal-toc { display: flex; flex-direction: column; gap: 1px; }
 .legal-toc a { font-size: 13.5px; line-height: 1.5; color: #B9B3A8; padding: 8px 0; border-bottom: 1px solid var(--border-subtle); }

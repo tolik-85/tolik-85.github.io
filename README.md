@@ -32,8 +32,11 @@ site/
 │   │   ├── menu.html
 │   │   └── ...                  ← по одному файлу на кожну сторінку сайту
 │   └── schema/
-│       ├── restaurant.json      ← Schema.org розмітка (LocalBusiness/Restaurant)
-│       └── article.json         ← Schema.org розмітка для статті блогу
+│       ├── restaurant.json      ← Schema.org розмітка (Restaurant, @id #organization)
+│       ├── website.json         ← Schema.org WebSite (головна), посилається на #organization
+│       ├── blog.json            ← Schema.org Blog для /blog.html
+│       ├── faq-*.json           ← FAQPage для сторінок з власним FAQ у frontmatter
+│       └── article.json         ← Schema.org BlogPosting для статті блогу
 │
 ├── build/
 │   └── build.js                 ← скрипт збірки (Node.js, без залежностей)
@@ -50,7 +53,8 @@ site/
 │   │   └── rolls.js, article.js, promotions.js  ← JS конкретної сторінки
 │   ├── fonts/                   ← файли шрифтів (.woff2), розміщені локально
 │   ├── images/                  ← фото страв, іконки
-│   └── images/icons/            ← favicon.svg, apple-touch-icon.png, icon-192/512.png
+│   ├── images/icons/            ← favicon.svg, apple-touch-icon.png, icon-192/512.png
+│   └── images/og/               ← OG-картинки 1200×630 (по одній на сторінку, frontmatter ogImage)
 │
 └── server/
     ├── nginx.conf.example       ← приклад конфігурації Nginx (security-заголовки, кешування, gzip)

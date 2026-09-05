@@ -1,37 +1,94 @@
 {
   "@context": "https://schema.org",
   "@type": "Restaurant",
+  "@id": "https://pandasushi.od.ua/#organization",
   "name": "Панда Суші",
-  "image": "https://pandasushi.od.ua/assets/images/home/hero-set.jpg",
   "url": "https://pandasushi.od.ua/",
+  "image": [
+    "https://pandasushi.od.ua/assets/images/og/default.jpg",
+    "https://pandasushi.od.ua/assets/images/home/hero-set.webp"
+  ],
+  "logo": "https://pandasushi.od.ua/assets/images/icons/icon-512.png",
   "telephone": "+380973981846",
+  "email": "hi@pandasushi.od.ua",
+  "sameAs": [
+    "https://t.me/pandasushi_odesa"
+  ],
   "priceRange": "₴₴",
-  "servesCuisine": ["Japanese", "Sushi", "Asian"],
+  "currenciesAccepted": "UAH",
+  "paymentAccepted": "Cash, Credit Card, Apple Pay, Google Pay",
+  "servesCuisine": [
+    "Japanese",
+    "Sushi",
+    "Asian"
+  ],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "вул. Грецька, 12",
     "addressLocality": "Одеса",
+    "postalCode": "65026",
     "addressCountry": "UA"
   },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
     "opens": "10:00",
     "closes": "22:45"
   },
-  "menu": "https://pandasushi.od.ua/menu.html",
-  "acceptsReservations": "False",
+  "hasMenu": "https://pandasushi.od.ua/menu.html",
+  "acceptsReservations": false,
   "areaServed": [
-    { "@type": "Place", "name": "Центр Одеси" },
-    { "@type": "Place", "name": "Приморський район" },
-    { "@type": "Place", "name": "Аркадія" },
-    { "@type": "Place", "name": "Фонтан" },
-    { "@type": "Place", "name": "Таїрова" },
-    { "@type": "Place", "name": "Київський район" },
-    { "@type": "Place", "name": "Черьомушки" },
-    { "@type": "Place", "name": "Молдаванка" },
-    { "@type": "Place", "name": "Слобідка" },
-    { "@type": "Place", "name": "Пересип" },
-    { "@type": "Place", "name": "Селище Котовського" }
+    {
+      "@type": "Place",
+      "name": "Центр Одеси"
+    },
+    {
+      "@type": "Place",
+      "name": "Приморський район"
+    },
+    {
+      "@type": "Place",
+      "name": "Аркадія"
+    },
+    {
+      "@type": "Place",
+      "name": "Фонтан"
+    },
+    {
+      "@type": "Place",
+      "name": "Таїрова"
+    },
+    {
+      "@type": "Place",
+      "name": "Київський район"
+    },
+    {
+      "@type": "Place",
+      "name": "Черьомушки"
+    },
+    {
+      "@type": "Place",
+      "name": "Молдаванка"
+    },
+    {
+      "@type": "Place",
+      "name": "Слобідка"
+    },
+    {
+      "@type": "Place",
+      "name": "Пересип"
+    },
+    {
+      "@type": "Place",
+      "name": "Селище Котовського"
+    }
   ]
 }

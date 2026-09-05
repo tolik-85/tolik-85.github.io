@@ -8,3 +8,6 @@ api/telegram-config.php
 # JSON-ключі сервісного акаунта Google (GSC-вигрузка) — тільки в GitHub
 # Secrets, ніколи в репозиторії. Шаблон покриває і перевипущені ключі.
 panda-sushi-*.json
+
+# Граф знань проєкту (graphify) — генерується локально, не деплоїться.
+graphify-out/

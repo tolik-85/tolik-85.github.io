@@ -13,7 +13,7 @@
 
 .catalog-sidebar { position: sticky; top: 180px; flex: 1 1 240px; max-width: 280px; display: flex; flex-direction: column; gap: 14px; }
 .sidebar-box { background: #1C1916; border: 1px solid var(--border-subtle); border-radius: 22px; padding: 12px; }
-.sidebar-box h2 { font-size: 11.5px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; color: var(--color-text-dim); margin: 8px 10px 12px; font-family: var(--font-body); }
+.sidebar-box h2, .sidebar-box__title { font-size: 11.5px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; color: var(--color-text-dim); margin: 8px 10px 12px; font-family: var(--font-body); }
 .sidebar-cats { display: flex; flex-direction: column; gap: 2px; }
 .sidebar-cats a { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px; border-radius: 12px; font-size: 14px; font-weight: 600; color: var(--color-text-soft); transition: background .18s; }
 .sidebar-cats a:hover { background: rgba(255, 255, 255, .05); }
@@ -27,7 +27,7 @@
 .sidebar-tags a:hover { border-color: var(--color-accent); color: var(--color-accent); }
 
 .sidebar-promo { background: linear-gradient(150deg, #2A1710, #1C1916); border: 1px solid rgba(245, 132, 53, .2); border-radius: 22px; padding: 20px; }
-.sidebar-promo h2 { font-family: var(--font-heading); font-weight: 400; font-size: 19px; margin: 0; text-transform: none; letter-spacing: 0; color: var(--color-text); }
+.sidebar-promo h2, .sidebar-promo__title { font-family: var(--font-heading); font-weight: 400; font-size: 19px; margin: 0; text-transform: none; letter-spacing: 0; color: var(--color-text); }
 .sidebar-promo p { font-size: 13px; color: var(--color-text-muted); line-height: 1.6; margin: 8px 0 14px; }
 .sidebar-promo a { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: var(--color-accent); }
 

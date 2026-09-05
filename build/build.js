@@ -177,7 +177,7 @@ function escapeAttr(str) {
 function buildHead(meta, content) {
   const canonicalPath = meta.canonical || '/';
   const canonicalUrl = SITE_URL + canonicalPath;
-  const ogImage = meta.ogImage ? SITE_URL + meta.ogImage : SITE_URL + '/assets/images/og-default.jpg';
+  const ogImage = meta.ogImage ? SITE_URL + meta.ogImage : SITE_URL + '/assets/images/og/default.jpg';
   const extraCss = (meta.css || '')
     .split(',')
     .map((s) => s.trim())
@@ -215,6 +215,9 @@ function buildHead(meta, content) {
   <meta property="og:description" content="${escapeAttr(meta.description || '')}">
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:image" content="${ogImage}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="${escapeAttr(meta.title)}">
   <meta property="og:locale" content="uk_UA">
   <meta name="twitter:card" content="summary_large_image">
 

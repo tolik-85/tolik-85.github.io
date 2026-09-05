@@ -19,7 +19,7 @@
 .article-layout { display: flex; flex-wrap: wrap; gap: clamp(26px, 4vw, 60px); align-items: flex-start; margin-top: clamp(28px, 3.6vw, 44px); }
 .article-aside { flex: 1 1 250px; position: sticky; top: 130px; order: 2; }
 .article-toc { background: #1C1916; border: 1px solid var(--border-subtle); border-radius: 22px; padding: 22px 24px; }
-.article-toc h2 { font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--color-text-faint); margin: 0 0 14px; font-family: var(--font-body); }
+.article-toc h2, .article-toc__title { font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--color-text-faint); margin: 0 0 14px; font-family: var(--font-body); }
 .article-toc__list { display: flex; flex-direction: column; gap: 1px; }
 .article-toc__list a { font-size: 13.5px; line-height: 1.5; color: #B9B3A8; padding: 8px 0; border-bottom: 1px solid var(--border-subtle); }
 .article-toc__list a:hover { color: var(--color-accent); }

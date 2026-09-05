@@ -18,6 +18,30 @@
 
   RewriteCond %{HTTP_HOST} ^www\.pandasushi\.od\.ua$ [NC]
   RewriteRule ^ https://pandasushi.od.ua%{REQUEST_URI} [L,R=301]
+
+  # --- Канонізація URL (за SEO-аудитом, пункт «301 редирект») ---
+  # 1а) Слеш(і) після імені файла: /rolls.html/, /rolls.html// → /rolls.html
+  RewriteCond %{THE_REQUEST} \s(/[^?\s]*\.html)/+[\s?] [NC]
+  RewriteRule ^ https://pandasushi.od.ua%1 [L,R=301,NE]
+
+  # 1б) Множинні слеші будь-де: //menu.html, /a//b → один слеш (301).
+  #     Дивимось у THE_REQUEST (сирий рядок запиту), бо REQUEST_URI Apache
+  #     уже «схлопує». Слеші всередині query (?a=//b) не чіпаємо.
+  RewriteCond %{THE_REQUEST} \s([^?\s]*?)/{2,}([^?\s]*)
+  RewriteRule ^ https://pandasushi.od.ua%1/%2 [L,R=301,NE]
+
+  # 2) Індексний файл: /index.html → / (сторінка та сама, canonical уже "/").
+  #    Умова по THE_REQUEST не дає зациклитись на внутрішньому DirectoryIndex.
+  RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+  RewriteRule ^index\.html$ https://pandasushi.od.ua/ [L,R=301]
+</IfModule>
+
+# 3) Регістр символів: /Rolls.html, /MENU.HTML → 301 на існуючий файл у
+#    правильному регістрі (mod_speling; якщо модуля немає — лишається 404,
+#    що для SEO теж коректно: дублів у нижньому регістрі не виникає).
+<IfModule mod_speling.c>
+  CheckSpelling Off
+  CheckCaseOnly On
 </IfModule>
 
 # ---------- Security-заголовки ----------

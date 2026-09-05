@@ -74,7 +74,8 @@
 }
 .footer-social__link:hover { border-color: var(--color-accent); color: var(--color-accent); }
 
-.footer-col h3 {
+.footer-col h3,
+.footer-col__title {
   font-size: 12px;
   font-weight: 800;
   letter-spacing: .12em;

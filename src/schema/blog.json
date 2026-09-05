@@ -1,0 +1,31 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": "https://pandasushi.od.ua/blog.html#blog",
+  "url": "https://pandasushi.od.ua/blog.html",
+  "name": "Блог кухні Панда Суші",
+  "description": "Блог кухні Панда Суші: як приймаємо рибу, чому рол розвалюється, скільки живе вершковий сир у боксі.",
+  "inLanguage": "uk",
+  "publisher": {
+    "@id": "https://pandasushi.od.ua/#organization"
+  },
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Як обрати суші, щоб не отруїтись: 7 ознак свіжої риби",
+      "url": "https://pandasushi.od.ua/article.html",
+      "mainEntityOfPage": "https://pandasushi.od.ua/article.html",
+      "image": "https://pandasushi.od.ua/assets/images/og/article.jpg",
+      "datePublished": "2026-01-18",
+      "dateModified": "2026-01-18",
+      "author": {
+        "@type": "Person",
+        "name": "Кенджі Танака",
+        "jobTitle": "Шеф-кухар"
+      },
+      "publisher": {
+        "@id": "https://pandasushi.od.ua/#organization"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://pandasushi.od.ua/#website",
+  "url": "https://pandasushi.od.ua/",
+  "name": "Панда Суші",
+  "alternateName": "Panda Sushi Odesa",
+  "description": "Доставка суші, ролів, сетів і поке по Одесі за 45–70 хвилин.",
+  "inLanguage": "uk",
+  "publisher": {
+    "@id": "https://pandasushi.od.ua/#organization"
+  }
+}
