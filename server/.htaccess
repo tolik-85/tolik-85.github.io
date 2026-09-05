@@ -34,6 +34,14 @@
   #    Умова по THE_REQUEST не дає зациклитись на внутрішньому DirectoryIndex.
   RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
   RewriteRule ^index\.html$ https://pandasushi.od.ua/ [L,R=301]
+
+  # 2б) Старі фільтри ?f= на /rolls.html → окремі сторінки підбірок (QSD прибирає query).
+  RewriteCond %{QUERY_STRING} (^|&)f=spicy(&|$) [NC]
+  RewriteRule ^rolls\.html$ https://pandasushi.od.ua/hostri-roly.html [L,R=301,QSD]
+  RewriteCond %{QUERY_STRING} (^|&)f=vege(&|$) [NC]
+  RewriteRule ^rolls\.html$ https://pandasushi.od.ua/vegetarianski.html [L,R=301,QSD]
+  RewriteCond %{QUERY_STRING} (^|&)f=classic(&|$) [NC]
+  RewriteRule ^rolls\.html$ https://pandasushi.od.ua/rolls.html [L,R=301,QSD]
 </IfModule>
 
 # 3) Регістр символів: /Rolls.html, /MENU.HTML → 301 на існуючий файл у

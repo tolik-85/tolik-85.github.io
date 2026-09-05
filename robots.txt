@@ -7,6 +7,5 @@ Disallow: /src/
 Disallow: /build/
 Disallow: /server/
 Disallow: /seo-data/
-Disallow: /*?f=
 
 Sitemap: https://pandasushi.od.ua/sitemap.xml

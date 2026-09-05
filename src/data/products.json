@@ -1,0 +1,2963 @@
+{
+  "_readme": "Єдине джерело даних про страви. Картки в категоріях поки що лишаються в HTML; build/generate-product-pages.js генерує сторінки /strava/<id>.html лише для позицій із заповненим seoText.",
+  "updated": "2026-09-05",
+  "products": [
+    {
+      "id": "hit-philadelphia",
+      "category": "rolls",
+      "categoryName": "Роли",
+      "name": "Філадельфія класична",
+      "desc": "Лосось, вершковий сир «Філадельфія», огірок, рис у нюрі.",
+      "meta": "6 шт · 248 г",
+      "price": 259,
+      "tag": "classic",
+      "rating": "4.9",
+      "votes": 612,
+      "img": "/assets/images/home/hit-philadelphia.jpg",
+      "alt": "Філадельфія класична — рол з лососем, вершковим сиром і огірком",
+      "badges": [
+        {
+          "type": "hit",
+          "label": "Хіт"
+        }
+      ],
+      "ingredients": [
+        "вершковий сир",
+        "лосось",
+        "огірок",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 205,
+        "protein": 7.2,
+        "fat": 7.2,
+        "carbs": 25.7,
+        "allergens": "риба, молоко",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "hit-california",
+      "category": "rolls",
+      "categoryName": "Роли",
+      "name": "Каліфорнія класична",
+      "desc": "Креветка, авокадо, огірок, ікра тобіко зверху.",
+      "meta": "6 шт · 260 г",
+      "price": 249,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 498,
+      "img": "/assets/images/home/hit-california.jpg",
+      "alt": "Каліфорнія класична — рол з крабовими паличками, авокадо та ікрою тобіко",
+      "badges": [
+        {
+          "type": "hit",
+          "label": "Хіт"
+        }
+      ],
+      "ingredients": [
+        "креветка",
+        "авокадо",
+        "огірок",
+        "ікра тобіко",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 207,
+        "protein": 8.3,
+        "fat": 6.4,
+        "carbs": 23.8,
+        "allergens": "ракоподібні",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "hit-dragon",
+      "category": "rolls",
+      "categoryName": "Роли",
+      "name": "Дракон класичний",
+      "desc": "Креветка темпура, авокадо, кунжут, соус унагі зверху.",
+      "meta": "6 шт · 272 г",
+      "price": 285,
+      "tag": "hot",
+      "rating": "4.9",
+      "votes": 355,
+      "img": "/assets/images/home/hit-dragon.jpg",
+      "alt": "Дракон класичний — запечений рол з креветкою, авокадо та соусом унагі",
+      "badges": [
+        {
+          "type": "hit",
+          "label": "Хіт"
+        }
+      ],
+      "ingredients": [
+        "соус унагі",
+        "креветка",
+        "авокадо",
+        "кунжут",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 177,
+        "protein": 8.4,
+        "fat": 6.8,
+        "carbs": 24.7,
+        "allergens": "риба, ракоподібні, кунжут",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "rolls-kalifornia-vuhor",
+      "category": "rolls",
+      "categoryName": "Роли",
+      "name": "Каліфорнія з вугром",
+      "desc": "Вугор унагі, авокадо, огірок, ікра тобіко зверху.",
+      "meta": "6 шт · 265 г",
+      "price": 289,
+      "tag": "hot",
+      "rating": "4.8",
+      "votes": 14,
+      "img": "/assets/menu-images/rolls-kalifornia-vuhor.webp",
+      "alt": "Каліфорнія з вугром — рол з вугром унагі, авокадо, огірком та ікрою тобіко",
+      "badges": [
+        {
+          "type": "new",
+          "label": "Новинка"
+        }
+      ],
+      "ingredients": [
+        "вугор унагі",
+        "авокадо",
+        "огірок",
+        "ікра тобіко",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 195,
+        "protein": 6.8,
+        "fat": 7.5,
+        "carbs": 24,
+        "allergens": "риба",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "rolls-kalifornia-spicy",
+      "category": "rolls",
+      "categoryName": "Роли",
+      "name": "Спайсі Каліфорнія",
+      "desc": "Краб, авокадо, гострий соус і спайсі-майонез зверху.",
+      "meta": "6 шт · 258 г",
+      "price": 269,
+      "tag": "spicy",
+      "rating": "4.7",
+      "votes": 11,
+      "img": "/assets/menu-images/rolls-kalifornia-spicy.webp",
+      "alt": "Спайсі Каліфорнія — рол з крабом, авокадо та гострим спайсі-майонезом",
+      "badges": [
+        {
+          "type": "spicy",
+          "label": "Гостро"
+        }
+      ],
+      "ingredients": [
+        "крабові палички",
+        "авокадо",
+        "гострий соус",
+        "спайсі-майонез",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 210,
+        "protein": 6.5,
+        "fat": 8.5,
+        "carbs": 23,
+        "allergens": "ракоподібні",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "rolls-zelenyi-drakon",
+      "category": "rolls",
+      "categoryName": "Роли",
+      "name": "Зелений дракон",
+      "desc": "Креветка темпура, огірок, зверху — тонкі скибочки авокадо замість соусу унагі.",
+      "meta": "6 шт · 275 г",
+      "price": 299,
+      "tag": "hot",
+      "rating": "4.8",
+      "votes": 9,
+      "img": "/assets/menu-images/rolls-zelenyi-drakon.webp",
+      "alt": "Зелений дракон — рол з креветкою темпура під шапкою з авокадо",
+      "badges": [
+        {
+          "type": "new",
+          "label": "Новинка"
+        }
+      ],
+      "ingredients": [
+        "креветка темпура",
+        "авокадо",
+        "огірок",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 180,
+        "protein": 7,
+        "fat": 7,
+        "carbs": 23,
+        "allergens": "ракоподібні",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "rolls-chervonyi-drakon",
+      "category": "rolls",
+      "categoryName": "Роли",
+      "name": "Червоний дракон",
+      "desc": "Креветка темпура, огірок, зверху — ікра тобіко та гострий соус.",
+      "meta": "6 шт · 270 г",
+      "price": 299,
+      "tag": "spicy",
+      "rating": "4.8",
+      "votes": 9,
+      "img": "/assets/menu-images/rolls-chervonyi-drakon.webp",
+      "alt": "Червоний дракон — рол з креветкою темпура, ікрою тобіко та гострим соусом",
+      "badges": [
+        {
+          "type": "spicy",
+          "label": "Гостро"
+        }
+      ],
+      "ingredients": [
+        "креветка темпура",
+        "ікра тобіко",
+        "гострий соус",
+        "огірок",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 185,
+        "protein": 7.2,
+        "fat": 7.8,
+        "carbs": 22.5,
+        "allergens": "риба, ракоподібні",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "hit-philadelphia-cucumber",
+      "category": "rolls",
+      "categoryName": "Роли",
+      "name": "Філадельфія в огірку",
+      "desc": "Лосось, вершковий сир, рис — усе загорнуто у свіжий огірок замість норі.",
+      "meta": "6 шт · 255 г",
+      "price": 279,
+      "tag": "new",
+      "rating": "5.0",
+      "votes": 128,
+      "img": "/assets/images/home/hit-philadelphia-cucumber.jpg",
+      "alt": "Філадельфія в огірку — рол з лососем і вершковим сиром, огірок замість рису зверху",
+      "badges": [
+        {
+          "type": "new",
+          "label": "Новинка"
+        }
+      ],
+      "ingredients": [
+        "вершковий сир",
+        "лосось",
+        "огірок",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 154,
+        "protein": 5.8,
+        "fat": 6,
+        "carbs": 18,
+        "allergens": "риба, молоко",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "hit-spicy-tuna",
+      "category": "rolls",
+      "categoryName": "Роли",
+      "name": "Спайсі тунець",
+      "desc": "Тартар з тунця під гострим соусом на рисі та класичні маки з тунцем.",
+      "meta": "12 шт · 290 г",
+      "price": 329,
+      "tag": "spicy",
+      "rating": "4.8",
+      "votes": 241,
+      "img": "/assets/images/home/hit-spicy-tuna.webp",
+      "alt": "Спайсі тунець — запечені роли з тунцем під гострим соусом і класичні маки з тунцем",
+      "badges": [
+        {
+          "type": "spicy",
+          "label": "Гостро"
+        }
+      ],
+      "ingredients": [
+        "тунець",
+        "гострий соус",
+        "рис",
+        "норі",
+        "кунжут",
+        "огірок"
+      ],
+      "nutrition": {
+        "kcal": 150,
+        "protein": 6.9,
+        "fat": 5.8,
+        "carbs": 19.2,
+        "allergens": "риба",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "hit-vegan-avocado",
+      "category": "rolls",
+      "categoryName": "Роли",
+      "name": "Веган Авокадо",
+      "desc": "Авокадо, вершковий сир, огірок, кунжут — без риби і морепродуктів.",
+      "meta": "8 шт · 232 г",
+      "price": 219,
+      "tag": "vege",
+      "rating": "4.9",
+      "votes": 167,
+      "img": "/assets/images/home/hit-vegan-avocado.webp",
+      "alt": "Веган Авокадо — рол з авокадо, вершковим сиром і огірком, кунжут",
+      "badges": [
+        {
+          "type": "vegan",
+          "label": "Вегетаріанське"
+        }
+      ],
+      "ingredients": [
+        "вершковий сир",
+        "авокадо",
+        "огірок",
+        "кунжут",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 137,
+        "protein": 7.2,
+        "fat": 5.5,
+        "carbs": 21.6,
+        "allergens": "молоко, кунжут",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "hit-losos-maxi",
+      "category": "rolls",
+      "categoryName": "Роли",
+      "name": "Сет «Лосось Максі»",
+      "desc": "Тільки лосось: класичні й запечені роли на великій тарілці — для компанії.",
+      "meta": "28 шт · 940 г",
+      "price": 1090,
+      "tag": "classic",
+      "rating": "4.9",
+      "votes": 203,
+      "img": "/assets/images/home/hit-losos-maxi.webp",
+      "alt": "Сет «Лосось Максі» — велика тарілка ролів з лососем на компанію",
+      "badges": [
+        {
+          "type": "hit",
+          "label": "Хіт"
+        }
+      ],
+      "ingredients": [
+        "лосось",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 172,
+        "protein": 5.7,
+        "fat": 5.6,
+        "carbs": 17.5,
+        "allergens": "риба",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "sety-panda",
+      "category": "sety",
+      "categoryName": "Сети",
+      "name": "Сет «Панда»",
+      "desc": "Фірмове асорті класичних і запечених ролів з нігірі — на компанію.",
+      "meta": "25 шт · 1450 г",
+      "price": 1199,
+      "tag": "classic",
+      "rating": "4.9",
+      "votes": 214,
+      "img": "/assets/menu-images/sety-panda.webp",
+      "alt": "Сет «Панда» — фірмове асорті класичних і запечених ролів з нігірі — на компанію",
+      "badges": [
+        {
+          "type": "hit",
+          "label": "Хіт"
+        }
+      ],
+      "ingredients": [
+        "вершковий сир",
+        "огірок",
+        "кунжут",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 170,
+        "protein": 6.6,
+        "fat": 6.3,
+        "carbs": 21.6,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "sety-odesa-zapechena",
+      "category": "sety",
+      "categoryName": "Сети",
+      "name": "«Одеса запечена»",
+      "desc": "Три запечені роли під сирною шапкою — тепла подача у термобоксі.",
+      "meta": "20 шт · 1080 г",
+      "price": 1049,
+      "tag": "hot",
+      "rating": "4.8",
+      "votes": 176,
+      "img": "/assets/menu-images/sety-odesa-zapechena.webp",
+      "alt": "«Одеса запечена» — три запечені роли під сирною шапкою — тепла подача у термобоксі",
+      "badges": [
+        {
+          "type": "hit",
+          "label": "Хіт"
+        }
+      ],
+      "ingredients": [
+        "рис",
+        "норі",
+        "сирна шапка",
+        "ікра тобіко"
+      ],
+      "nutrition": {
+        "kcal": 193,
+        "protein": 7.8,
+        "fat": 6.3,
+        "carbs": 22.3,
+        "allergens": "молоко",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "sety-duet",
+      "category": "sety",
+      "categoryName": "Сети",
+      "name": "Сет «Дует»",
+      "desc": "Компактний набір класичних ролів рівно на двох.",
+      "meta": "14 шт · 620 г",
+      "price": 690,
+      "tag": "classic",
+      "rating": "4.7",
+      "votes": 58,
+      "img": "/assets/menu-images/sety-duet.webp",
+      "alt": "Сет «Дует» — компактний набір класичних ролів рівно на двох",
+      "badges": [],
+      "ingredients": [
+        "лосось",
+        "вугор унагі",
+        "соус унагі",
+        "кунжут",
+        "вершковий сир",
+        "огірок",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 185,
+        "protein": 8.6,
+        "fat": 6.5,
+        "carbs": 21.8,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "sety-vegan-garden",
+      "category": "sety",
+      "categoryName": "Сети",
+      "name": "Сет «Веган Гарден»",
+      "desc": "Овочеві й вегетаріанські роли без риби і морепродуктів.",
+      "meta": "16 шт · 760 г",
+      "price": 790,
+      "tag": "vege",
+      "rating": "4.8",
+      "votes": 47,
+      "img": "/assets/menu-images/sety-vegan-garden.webp",
+      "alt": "Сет «Веган Гарден» — овочеві й вегетаріанські роли без риби і морепродуктів",
+      "badges": [
+        {
+          "type": "vegan",
+          "label": "Вегетаріанське"
+        }
+      ],
+      "ingredients": [
+        "авокадо",
+        "тофу",
+        "манго",
+        "кунжут",
+        "свіжі овочі",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 203,
+        "protein": 7.4,
+        "fat": 7.1,
+        "carbs": 23.3,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "sety-hostryi-mix",
+      "category": "sety",
+      "categoryName": "Сети",
+      "name": "Сет «Гострий мікс»",
+      "desc": "Спайсі-роли з тунцем, лососем і креветкою під гострим соусом.",
+      "meta": "8 шт · 960 г",
+      "price": 990,
+      "tag": "spicy",
+      "rating": "4.8",
+      "votes": 63,
+      "img": "/assets/menu-images/sety-hostryi-mix.webp",
+      "alt": "Сет «Гострий мікс» — спайсі-роли з тунцем, лососем і креветкою під гострим соусом",
+      "badges": [
+        {
+          "type": "spicy",
+          "label": "Гостро"
+        }
+      ],
+      "ingredients": [
+        "лосось",
+        "креветка",
+        "гострий соус",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 142,
+        "protein": 5.8,
+        "fat": 6.2,
+        "carbs": 21.1,
+        "allergens": "риба, ракоподібні",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "sety-tunets-party",
+      "category": "sety",
+      "categoryName": "Сети",
+      "name": "Сет «Тунець Party»",
+      "desc": "Роли й нігірі з акцентом на свіжий тунець — для любителів риби.",
+      "meta": "12 шт · 1120 г",
+      "price": 1150,
+      "tag": "classic",
+      "rating": "4.9",
+      "votes": 39,
+      "img": "/assets/menu-images/sety-tunets-party.webp",
+      "alt": "Сет «Тунець Party» — роли й нігірі з акцентом на свіжий тунець — для любителів риби",
+      "badges": [],
+      "ingredients": [
+        "тунець",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 168,
+        "protein": 5.7,
+        "fat": 5,
+        "carbs": 20.6,
+        "allergens": "риба",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "sety-dytiachyi",
+      "category": "sety",
+      "categoryName": "Сети",
+      "name": "Сет «Дитячий»",
+      "desc": "Легкі роли без гострого й сирого — збалансований набір для родини.",
+      "meta": "6 шт · 430 г",
+      "price": 590,
+      "tag": "classic",
+      "rating": "4.9",
+      "votes": 31,
+      "img": "/assets/menu-images/sety-dytiachyi.webp",
+      "alt": "Сет «Дитячий» — легкі роли без гострого й сирого — збалансований набір для родини",
+      "badges": [],
+      "ingredients": [
+        "тамаго (омлет)",
+        "вершковий сир",
+        "огірок",
+        "курка",
+        "кляр темпура",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 195,
+        "protein": 8.5,
+        "fat": 6.8,
+        "carbs": 24.5,
+        "allergens": "молоко",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "sety-korolivskyi",
+      "category": "sety",
+      "categoryName": "Сети",
+      "name": "Сет «Королівський»",
+      "desc": "Преміальний набір з вугром унагі, ікрою і крем-сиром.",
+      "meta": "36 шт · 1550 г",
+      "price": 1699,
+      "tag": "classic",
+      "rating": "5.0",
+      "votes": 22,
+      "img": "/assets/menu-images/sety-korolivskyi.webp",
+      "alt": "Сет «Королівський» — преміальний набір з вугром унагі, ікрою і крем-сиром",
+      "badges": [
+        {
+          "type": "new",
+          "label": "Новинка"
+        }
+      ],
+      "ingredients": [
+        "вершковий сир",
+        "соус унагі",
+        "ікра тобіко",
+        "рис",
+        "норі",
+        "тунець",
+        "лосось",
+        "креветка",
+        "вугор унагі"
+      ],
+      "nutrition": {
+        "kcal": 177,
+        "protein": 7.7,
+        "fat": 6.9,
+        "carbs": 26.4,
+        "allergens": "риба, молоко",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "zapecheni-krevetka",
+      "category": "zapecheni",
+      "categoryName": "Запечені роли",
+      "name": "Запечений з креветкою",
+      "desc": "Креветка під сирною шапкою, соус унагі.",
+      "meta": "8 шт · 265 г",
+      "price": 289,
+      "tag": "hot",
+      "rating": "4.8",
+      "votes": 142,
+      "img": "/assets/menu-images/zapecheni-krevetka.webp",
+      "alt": "Запечений з креветкою — креветка під сирною шапкою, соус унагі",
+      "badges": [
+        {
+          "type": "hit",
+          "label": "Хіт"
+        }
+      ],
+      "ingredients": [
+        "соус унагі",
+        "креветка",
+        "рис",
+        "норі",
+        "сирна шапка",
+        "ікра тобіко",
+        "авокадо"
+      ],
+      "nutrition": {
+        "kcal": 161,
+        "protein": 6.3,
+        "fat": 8.2,
+        "carbs": 20.5,
+        "allergens": "риба, ракоподібні, молоко",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "zapecheni-losos",
+      "category": "zapecheni",
+      "categoryName": "Запечені роли",
+      "name": "Запечений з лососем",
+      "desc": "Лосось, вершковий сир, запечений верх з легкою скоринкою.",
+      "meta": "8 шт · 255 г",
+      "price": 275,
+      "tag": "hot",
+      "rating": "4.9",
+      "votes": 168,
+      "img": "/assets/menu-images/zapecheni-losos.webp",
+      "alt": "Запечений з лососем — лосось, вершковий сир, запечений верх з легкою скоринкою",
+      "badges": [
+        {
+          "type": "hit",
+          "label": "Хіт"
+        }
+      ],
+      "ingredients": [
+        "вершковий сир",
+        "лосось",
+        "рис",
+        "норі",
+        "сирна шапка"
+      ],
+      "nutrition": {
+        "kcal": 178,
+        "protein": 7.2,
+        "fat": 8.5,
+        "carbs": 19.1,
+        "allergens": "риба, молоко",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "zapecheni-kurka",
+      "category": "zapecheni",
+      "categoryName": "Запечені роли",
+      "name": "Запечений з куркою",
+      "desc": "Курка теріякі під сирною шапкою — без сирого.",
+      "meta": "3 шт · 250 г",
+      "price": 265,
+      "tag": "hot",
+      "rating": "4.7",
+      "votes": 74,
+      "img": "/assets/menu-images/zapecheni-kurka.webp",
+      "alt": "Запечений з куркою — курка теріякі під сирною шапкою — без сирого",
+      "badges": [],
+      "ingredients": [
+        "курка",
+        "соус теріякі",
+        "рис",
+        "норі",
+        "сирна шапка",
+        "кунжут"
+      ],
+      "nutrition": {
+        "kcal": 178,
+        "protein": 7.5,
+        "fat": 6.9,
+        "carbs": 20.7,
+        "allergens": "молоко",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "zapecheni-tunets",
+      "category": "zapecheni",
+      "categoryName": "Запечені роли",
+      "name": "Запечений з тунцем",
+      "desc": "Тунець під гострим соусом, запечений верх.",
+      "meta": "8 шт · 260 г",
+      "price": 295,
+      "tag": "spicy",
+      "rating": "4.8",
+      "votes": 53,
+      "img": "/assets/menu-images/zapecheni-tunets.webp",
+      "alt": "Запечений з тунцем — тунець під гострим соусом, запечений верх",
+      "badges": [],
+      "ingredients": [
+        "тунець",
+        "гострий соус",
+        "рис",
+        "норі",
+        "сирна шапка",
+        "кунжут"
+      ],
+      "nutrition": {
+        "kcal": 176,
+        "protein": 7.2,
+        "fat": 7.7,
+        "carbs": 19.8,
+        "allergens": "риба",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "zapecheni-ovochevyi",
+      "category": "zapecheni",
+      "categoryName": "Запечені роли",
+      "name": "Запечений овочевий",
+      "desc": "Авокадо, огірок, сир — без риби і морепродуктів.",
+      "meta": "7 шт · 235 г",
+      "price": 259,
+      "tag": "vege",
+      "rating": "4.7",
+      "votes": 29,
+      "img": "/assets/menu-images/zapecheni-ovochevyi.webp",
+      "alt": "Запечений овочевий — авокадо, огірок, сир — без риби і морепродуктів",
+      "badges": [
+        {
+          "type": "vegan",
+          "label": "Вегетаріанське"
+        }
+      ],
+      "ingredients": [
+        "авокадо",
+        "огірок",
+        "рис",
+        "норі",
+        "сирна шапка"
+      ],
+      "nutrition": {
+        "kcal": 206,
+        "protein": 8.4,
+        "fat": 9.7,
+        "carbs": 25.3,
+        "allergens": "молоко",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "zapecheni-spicy-krab",
+      "category": "zapecheni",
+      "categoryName": "Запечені роли",
+      "name": "Запечений «Спайсі краб»",
+      "desc": "Крабові палички під гострим майонезом, запечений верх.",
+      "meta": "6 шт · 258 г",
+      "price": 285,
+      "tag": "spicy",
+      "rating": "4.8",
+      "votes": 41,
+      "img": "/assets/menu-images/zapecheni-spicy-krab.webp",
+      "alt": "Запечений «Спайсі краб» — крабові палички під гострим майонезом, запечений верх",
+      "badges": [
+        {
+          "type": "spicy",
+          "label": "Гостро"
+        }
+      ],
+      "ingredients": [
+        "крабові палички",
+        "гострий соус",
+        "спайсі-майонез",
+        "рис",
+        "норі",
+        "сирна шапка",
+        "ікра тобіко"
+      ],
+      "nutrition": {
+        "kcal": 215,
+        "protein": 9.5,
+        "fat": 10.5,
+        "carbs": 21.2,
+        "allergens": "ракоподібні",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "zapecheni-vuhor",
+      "category": "zapecheni",
+      "categoryName": "Запечені роли",
+      "name": "Запечений з вугром",
+      "desc": "Вугор унагі, соус унагі, кунжут зверху.",
+      "meta": "6 шт · 270 г",
+      "price": 319,
+      "tag": "classic",
+      "rating": "5.0",
+      "votes": 26,
+      "img": "/assets/menu-images/zapecheni-vuhor.webp",
+      "alt": "Запечений з вугром — вугор унагі, соус унагі, кунжут зверху",
+      "badges": [
+        {
+          "type": "new",
+          "label": "Новинка"
+        }
+      ],
+      "ingredients": [
+        "вугор унагі",
+        "соус унагі",
+        "кунжут",
+        "рис",
+        "норі",
+        "сирна шапка",
+        "огірок"
+      ],
+      "nutrition": {
+        "kcal": 187,
+        "protein": 7.7,
+        "fat": 6.7,
+        "carbs": 20.7,
+        "allergens": "риба, кунжут",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "tempura-krevetka",
+      "category": "tempura",
+      "categoryName": "Темпура",
+      "name": "Темпура з креветкою",
+      "desc": "Креветка в хрусткому клярі, соус унагі.",
+      "meta": "4 шт · 245 г",
+      "price": 299,
+      "tag": "hot",
+      "rating": "4.8",
+      "votes": 121,
+      "img": "/assets/menu-images/tempura-krevetka.webp",
+      "alt": "Темпура з креветкою — креветка в хрусткому клярі, соус унагі",
+      "badges": [
+        {
+          "type": "hit",
+          "label": "Хіт"
+        }
+      ],
+      "ingredients": [
+        "соус унагі",
+        "креветка",
+        "рис",
+        "кляр темпура",
+        "огірок",
+        "спайсі-майонез"
+      ],
+      "nutrition": {
+        "kcal": 216,
+        "protein": 8.6,
+        "fat": 11.6,
+        "carbs": 26,
+        "allergens": "риба, ракоподібні",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "tempura-losos",
+      "category": "tempura",
+      "categoryName": "Темпура",
+      "name": "Темпура з лососем",
+      "desc": "Лосось у клярі, вершковий сир, соус унагі.",
+      "meta": "7 шт · 240 г",
+      "price": 279,
+      "tag": "hot",
+      "rating": "4.8",
+      "votes": 96,
+      "img": "/assets/menu-images/tempura-losos.webp",
+      "alt": "Темпура з лососем — лосось у клярі, вершковий сир, соус унагі",
+      "badges": [],
+      "ingredients": [
+        "вершковий сир",
+        "лосось",
+        "соус унагі",
+        "рис",
+        "кляр темпура",
+        "кунжут"
+      ],
+      "nutrition": {
+        "kcal": 166,
+        "protein": 5.9,
+        "fat": 9.2,
+        "carbs": 19.3,
+        "allergens": "риба, молоко",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "tempura-ovocheva",
+      "category": "tempura",
+      "categoryName": "Темпура",
+      "name": "Темпура овочева",
+      "desc": "Авокадо, огірок і батат у хрусткому клярі.",
+      "meta": "5 шт · 220 г",
+      "price": 259,
+      "tag": "vege",
+      "rating": "4.7",
+      "votes": 44,
+      "img": "/assets/menu-images/tempura-ovocheva.webp",
+      "alt": "Темпура овочева — авокадо, огірок і батат у хрусткому клярі",
+      "badges": [
+        {
+          "type": "vegan",
+          "label": "Вегетаріанське"
+        }
+      ],
+      "ingredients": [
+        "авокадо",
+        "огірок",
+        "батат",
+        "рис",
+        "кляр темпура",
+        "кунжут"
+      ],
+      "nutrition": {
+        "kcal": 170,
+        "protein": 7.1,
+        "fat": 10.3,
+        "carbs": 21.3,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "tempura-kurka",
+      "category": "tempura",
+      "categoryName": "Темпура",
+      "name": "Темпура з куркою",
+      "desc": "Курка в клярі під легким спайсі-соусом.",
+      "meta": "7 шт · 235 г",
+      "price": 269,
+      "tag": "hot",
+      "rating": "4.7",
+      "votes": 38,
+      "img": "/assets/menu-images/tempura-kurka.webp",
+      "alt": "Темпура з куркою — курка в клярі під легким спайсі-соусом",
+      "badges": [],
+      "ingredients": [
+        "гострий соус",
+        "курка",
+        "рис",
+        "кляр темпура"
+      ],
+      "nutrition": {
+        "kcal": 166,
+        "protein": 6.2,
+        "fat": 9.8,
+        "carbs": 21,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "tempura-spicy-mix",
+      "category": "tempura",
+      "categoryName": "Темпура",
+      "name": "Темпура «Спайсі мікс»",
+      "desc": "Креветка і лосось у клярі під гострим соусом.",
+      "meta": "6 шт · 250 г",
+      "price": 309,
+      "tag": "spicy",
+      "rating": "4.9",
+      "votes": 33,
+      "img": "/assets/menu-images/tempura-spicy-mix.webp",
+      "alt": "Темпура «Спайсі мікс» — креветка і лосось у клярі під гострим соусом",
+      "badges": [
+        {
+          "type": "spicy",
+          "label": "Гостро"
+        }
+      ],
+      "ingredients": [
+        "лосось",
+        "креветка",
+        "гострий соус",
+        "рис",
+        "кляр темпура",
+        "спайсі-майонез"
+      ],
+      "nutrition": {
+        "kcal": 200,
+        "protein": 6.6,
+        "fat": 9.7,
+        "carbs": 21.3,
+        "allergens": "риба, ракоподібні",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "tempura-krab",
+      "category": "tempura",
+      "categoryName": "Темпура",
+      "name": "Темпура з крабом",
+      "desc": "Крабові палички в хрусткому клярі, спайсі-майонез.",
+      "meta": "6 шт · 242 г",
+      "price": 289,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 27,
+      "img": "/assets/menu-images/tempura-krab.webp",
+      "alt": "Темпура з крабом — крабові палички в хрусткому клярі, спайсі-майонез",
+      "badges": [],
+      "ingredients": [
+        "крабові палички",
+        "гострий соус",
+        "спайсі-майонез",
+        "рис",
+        "кляр темпура",
+        "ікра тобіко"
+      ],
+      "nutrition": {
+        "kcal": 179,
+        "protein": 6.8,
+        "fat": 10.6,
+        "carbs": 19.8,
+        "allergens": "ракоподібні",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "nigiri-losos",
+      "category": "nigiri",
+      "categoryName": "Нігірі та гункани",
+      "name": "Нігірі з лососем",
+      "desc": "Рис ручної ліпки під скибкою свіжого лосося.",
+      "meta": "2 шт · 55 г",
+      "price": 79,
+      "tag": "classic",
+      "rating": "4.9",
+      "votes": 132,
+      "img": "/assets/menu-images/nigiri-losos.webp",
+      "alt": "Нігірі з лососем — рис ручної ліпки під скибкою свіжого лосося",
+      "badges": [
+        {
+          "type": "hit",
+          "label": "Хіт"
+        }
+      ],
+      "ingredients": [
+        "лосось",
+        "рис"
+      ],
+      "nutrition": {
+        "kcal": 126,
+        "protein": 5.1,
+        "fat": 3.1,
+        "carbs": 19.1,
+        "allergens": "риба",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "nigiri-tunets",
+      "category": "nigiri",
+      "categoryName": "Нігірі та гункани",
+      "name": "Нігірі з тунцем",
+      "desc": "Рис ручної ліпки під скибкою тунця.",
+      "meta": "2 шт · 52 г",
+      "price": 89,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 88,
+      "img": "/assets/menu-images/nigiri-tunets.webp",
+      "alt": "Нігірі з тунцем — рис ручної ліпки під скибкою тунця",
+      "badges": [],
+      "ingredients": [
+        "рис",
+        "тунець"
+      ],
+      "nutrition": {
+        "kcal": 167,
+        "protein": 6.9,
+        "fat": 3.2,
+        "carbs": 23.5,
+        "allergens": "риба",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "nigiri-gunkan-tobiko",
+      "category": "nigiri",
+      "categoryName": "Нігірі та гункани",
+      "name": "Гункан з ікрою тобіко",
+      "desc": "Рис у стрічці норі з ікрою тобіко зверху.",
+      "meta": "2 шт · 48 г",
+      "price": 69,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 71,
+      "img": "/assets/menu-images/nigiri-gunkan-tobiko.webp",
+      "alt": "Гункан з ікрою тобіко — рис у стрічці норі з ікрою тобіко зверху",
+      "badges": [],
+      "ingredients": [
+        "ікра тобіко",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 115,
+        "protein": 5.7,
+        "fat": 3,
+        "carbs": 17.6,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "nigiri-vuhor",
+      "category": "nigiri",
+      "categoryName": "Нігірі та гункани",
+      "name": "Нігірі з вугром",
+      "desc": "Копчений вугор унагі, соус унагі, кунжут.",
+      "meta": "2 шт · 58 г",
+      "price": 95,
+      "tag": "classic",
+      "rating": "4.9",
+      "votes": 52,
+      "img": "/assets/menu-images/nigiri-vuhor.webp",
+      "alt": "Нігірі з вугром — копчений вугор унагі, соус унагі, кунжут",
+      "badges": [
+        {
+          "type": "new",
+          "label": "Новинка"
+        }
+      ],
+      "ingredients": [
+        "вугор унагі",
+        "соус унагі",
+        "кунжут",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 132,
+        "protein": 5.5,
+        "fat": 2.4,
+        "carbs": 16.1,
+        "allergens": "риба, кунжут",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "nigiri-krevetka",
+      "category": "nigiri",
+      "categoryName": "Нігірі та гункани",
+      "name": "Нігірі з креветкою",
+      "desc": "Відварна креветка на рисі ручної ліпки.",
+      "meta": "2 шт · 54 г",
+      "price": 75,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 46,
+      "img": "/assets/menu-images/nigiri-krevetka.webp",
+      "alt": "Нігірі з креветкою — відварна креветка на рисі ручної ліпки",
+      "badges": [],
+      "ingredients": [
+        "креветка",
+        "рис"
+      ],
+      "nutrition": {
+        "kcal": 133,
+        "protein": 5,
+        "fat": 2.4,
+        "carbs": 17.4,
+        "allergens": "ракоподібні",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "nigiri-tamago",
+      "category": "nigiri",
+      "categoryName": "Нігірі та гункани",
+      "name": "Нігірі з тамаго",
+      "desc": "Солодкий японський омлет — вегетаріанський варіант.",
+      "meta": "2 шт · 50 г",
+      "price": 65,
+      "tag": "vege",
+      "rating": "4.6",
+      "votes": 24,
+      "img": "/assets/menu-images/nigiri-tamago.webp",
+      "alt": "Нігірі з тамаго — солодкий японський омлет — вегетаріанський варіант",
+      "badges": [
+        {
+          "type": "vegan",
+          "label": "Вегетаріанське"
+        }
+      ],
+      "ingredients": [
+        "тамаго (омлет)",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 140,
+        "protein": 7.2,
+        "fat": 3.9,
+        "carbs": 22.9,
+        "allergens": "яйця",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "nigiri-gunkan-ikra",
+      "category": "nigiri",
+      "categoryName": "Нігірі та гункани",
+      "name": "Гункан з лососевою ікрою",
+      "desc": "Рис у стрічці норі з червоною ікрою лосося.",
+      "meta": "2 шт · 46 г",
+      "price": 89,
+      "tag": "classic",
+      "rating": "4.9",
+      "votes": 35,
+      "img": "/assets/menu-images/nigiri-gunkan-ikra.webp",
+      "alt": "Гункан з лососевою ікрою — рис у стрічці норі з червоною ікрою лосося",
+      "badges": [],
+      "ingredients": [
+        "лосось",
+        "ікра лосося",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 150,
+        "protein": 7.6,
+        "fat": 3.4,
+        "carbs": 22.9,
+        "allergens": "риба",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "nigiri-gunkan-spicy-tunets",
+      "category": "nigiri",
+      "categoryName": "Нігірі та гункани",
+      "name": "Гункан «Спайсі тунець»",
+      "desc": "Тартар з тунця під гострим соусом у стрічці норі.",
+      "meta": "2 шт · 50 г",
+      "price": 79,
+      "tag": "spicy",
+      "rating": "4.8",
+      "votes": 29,
+      "img": "/assets/menu-images/nigiri-gunkan-spicy-tunets.webp",
+      "alt": "Гункан «Спайсі тунець» — тартар з тунця під гострим соусом у стрічці норі",
+      "badges": [
+        {
+          "type": "spicy",
+          "label": "Гостро"
+        }
+      ],
+      "ingredients": [
+        "тунець",
+        "гострий соус",
+        "рис",
+        "норі",
+        "кунжут"
+      ],
+      "nutrition": {
+        "kcal": 115,
+        "protein": 5.3,
+        "fat": 3.1,
+        "carbs": 16.5,
+        "allergens": "риба",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "nigiri-sashimi-losos",
+      "category": "nigiri",
+      "categoryName": "Нігірі та гункани",
+      "name": "Сашімі з лосося",
+      "desc": "10 тонких скибочок свіжого лосося — без рису, чистий смак риби.",
+      "meta": "10 шматочків · 150 г",
+      "price": 349,
+      "tag": "classic",
+      "rating": "4.9",
+      "votes": 12,
+      "img": "/assets/menu-images/nigiri-sashimi-losos.webp",
+      "alt": "Сашімі з лосося — 10 тонких скибочок свіжого лосося без рису",
+      "badges": [
+        {
+          "type": "new",
+          "label": "Новинка"
+        }
+      ],
+      "ingredients": [
+        "лосось"
+      ],
+      "nutrition": {
+        "kcal": 205,
+        "protein": 20,
+        "fat": 13,
+        "carbs": 0,
+        "allergens": "риба",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "nigiri-sashimi-tunets",
+      "category": "nigiri",
+      "categoryName": "Нігірі та гункани",
+      "name": "Сашімі з тунця",
+      "desc": "10 тонких скибочок свіжого тунця — без рису.",
+      "meta": "10 шматочків · 150 г",
+      "price": 379,
+      "tag": "classic",
+      "rating": "4.9",
+      "votes": 10,
+      "img": "/assets/menu-images/nigiri-sashimi-tunets.webp",
+      "alt": "Сашімі з тунця — 10 тонких скибочок свіжого тунця без рису",
+      "badges": [
+        {
+          "type": "new",
+          "label": "Новинка"
+        }
+      ],
+      "ingredients": [
+        "тунець"
+      ],
+      "nutrition": {
+        "kcal": 144,
+        "protein": 23,
+        "fat": 5,
+        "carbs": 0,
+        "allergens": "риба",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "nigiri-hosomaki-losos",
+      "category": "nigiri",
+      "categoryName": "Нігірі та гункани",
+      "name": "Хосомакі з лососем",
+      "desc": "Тонкий рол з одним інгредієнтом — лосось, рис, норі.",
+      "meta": "6 шт · 150 г",
+      "price": 179,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 8,
+      "img": "/assets/menu-images/nigiri-hosomaki-losos.webp",
+      "alt": "Хосомакі з лососем — тонкий рол з одним інгредієнтом",
+      "badges": [
+        {
+          "type": "new",
+          "label": "Новинка"
+        }
+      ],
+      "ingredients": [
+        "лосось",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 140,
+        "protein": 5,
+        "fat": 2.5,
+        "carbs": 22,
+        "allergens": "риба",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "nigiri-hosomaki-ohirok",
+      "category": "nigiri",
+      "categoryName": "Нігірі та гункани",
+      "name": "Хосомакі з огірком",
+      "desc": "Тонкий вегетаріанський рол — огірок, рис, норі.",
+      "meta": "6 шт · 140 г",
+      "price": 129,
+      "tag": "vege",
+      "rating": "4.7",
+      "votes": 7,
+      "img": "/assets/menu-images/nigiri-hosomaki-ohirok.webp",
+      "alt": "Хосомакі з огірком — тонкий вегетаріанський рол",
+      "badges": [
+        {
+          "type": "vegan",
+          "label": "Вегетаріанське"
+        }
+      ],
+      "ingredients": [
+        "огірок",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 110,
+        "protein": 2.5,
+        "fat": 0.5,
+        "carbs": 23,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "nigiri-futomaki-ovochi",
+      "category": "nigiri",
+      "categoryName": "Нігірі та гункани",
+      "name": "Футомакі овочеве",
+      "desc": "Товстий рол з тамаго, авокадо, огірком і морквою.",
+      "meta": "6 шт · 280 г",
+      "price": 239,
+      "tag": "vege",
+      "rating": "4.8",
+      "votes": 6,
+      "img": "/assets/menu-images/nigiri-futomaki-ovochi.webp",
+      "alt": "Футомакі овочеве — товстий рол з тамаго, авокадо, огірком і морквою",
+      "badges": [
+        {
+          "type": "vegan",
+          "label": "Вегетаріанське"
+        }
+      ],
+      "ingredients": [
+        "тамаго (омлет)",
+        "авокадо",
+        "огірок",
+        "морква",
+        "рис",
+        "норі"
+      ],
+      "nutrition": {
+        "kcal": 160,
+        "protein": 4.8,
+        "fat": 5.5,
+        "carbs": 24,
+        "allergens": "яйця",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "poke-losos",
+      "category": "poke",
+      "categoryName": "Поке",
+      "name": "Поке з лососем",
+      "desc": "Лосось, рис, овочі, соус — збалансований боул.",
+      "meta": "1 порція · 400 г",
+      "price": 289,
+      "tag": "classic",
+      "rating": "4.9",
+      "votes": 96,
+      "img": "/assets/menu-images/poke-losos.webp",
+      "alt": "Поке з лососем — лосось, рис, овочі, соус — збалансований боул",
+      "badges": [
+        {
+          "type": "hit",
+          "label": "Хіт"
+        }
+      ],
+      "ingredients": [
+        "лосось",
+        "рис",
+        "свіжі овочі",
+        "огірок",
+        "авокадо",
+        "едамаме",
+        "кунжут"
+      ],
+      "nutrition": {
+        "kcal": 105,
+        "protein": 8.4,
+        "fat": 4.4,
+        "carbs": 9.8,
+        "allergens": "риба",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "poke-tunets",
+      "category": "poke",
+      "categoryName": "Поке",
+      "name": "Поке з тунцем",
+      "desc": "Тунець, рис, едамаме, авокадо.",
+      "meta": "1 порція · 400 г",
+      "price": 299,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 74,
+      "img": "/assets/menu-images/poke-tunets.webp",
+      "alt": "Поке з тунцем — тунець, рис, едамаме, авокадо",
+      "badges": [],
+      "ingredients": [
+        "тунець",
+        "манго",
+        "норі",
+        "рис",
+        "свіжі овочі"
+      ],
+      "nutrition": {
+        "kcal": 128,
+        "protein": 10.8,
+        "fat": 4.6,
+        "carbs": 13.3,
+        "allergens": "риба, соя",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "poke-tofu",
+      "category": "poke",
+      "categoryName": "Поке",
+      "name": "Поке з тофу",
+      "desc": "Тофу, овочі, рис — повністю вегетаріанський боул.",
+      "meta": "1 порція · 380 г",
+      "price": 259,
+      "tag": "vege",
+      "rating": "4.7",
+      "votes": 38,
+      "img": "/assets/menu-images/poke-tofu.webp",
+      "alt": "Поке з тофу — тофу, овочі, рис — повністю вегетаріанський боул",
+      "badges": [
+        {
+          "type": "vegan",
+          "label": "Вегетаріанське"
+        }
+      ],
+      "ingredients": [
+        "тофу",
+        "рис",
+        "свіжі овочі",
+        "авокадо",
+        "едамаме",
+        "кунжут"
+      ],
+      "nutrition": {
+        "kcal": 109,
+        "protein": 8.2,
+        "fat": 4.4,
+        "carbs": 11.8,
+        "allergens": "соя",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "poke-krevetka",
+      "category": "poke",
+      "categoryName": "Поке",
+      "name": "Поке з креветкою",
+      "desc": "Креветка, авокадо, манго, рис.",
+      "meta": "1 порція · 390 г",
+      "price": 279,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 41,
+      "img": "/assets/menu-images/poke-krevetka.webp",
+      "alt": "Поке з креветкою — креветка, авокадо, манго, рис",
+      "badges": [],
+      "ingredients": [
+        "креветка",
+        "авокадо",
+        "манго",
+        "рис",
+        "свіжі овочі",
+        "огірок",
+        "кунжут"
+      ],
+      "nutrition": {
+        "kcal": 139,
+        "protein": 9.6,
+        "fat": 4.7,
+        "carbs": 13.7,
+        "allergens": "ракоподібні",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "poke-hostryi-tunets",
+      "category": "poke",
+      "categoryName": "Поке",
+      "name": "Поке «Гострий тунець»",
+      "desc": "Тунець під спайсі-соусом, огірок, кунжут.",
+      "meta": "1 порція · 400 г",
+      "price": 319,
+      "tag": "spicy",
+      "rating": "4.8",
+      "votes": 30,
+      "img": "/assets/menu-images/poke-hostryi-tunets.webp",
+      "alt": "Поке «Гострий тунець» — тунець під спайсі-соусом, огірок, кунжут",
+      "badges": [
+        {
+          "type": "spicy",
+          "label": "Гостро"
+        }
+      ],
+      "ingredients": [
+        "тунець",
+        "огірок",
+        "кунжут",
+        "гострий соус",
+        "рис",
+        "свіжі овочі"
+      ],
+      "nutrition": {
+        "kcal": 123,
+        "protein": 10.1,
+        "fat": 4.8,
+        "carbs": 14,
+        "allergens": "риба, кунжут",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "poke-garden",
+      "category": "poke",
+      "categoryName": "Поке",
+      "name": "Поке «Гарден»",
+      "desc": "Едамаме, авокадо, тофу і сезонні овочі.",
+      "meta": "1 порція · 370 г",
+      "price": 249,
+      "tag": "vege",
+      "rating": "4.7",
+      "votes": 19,
+      "img": "/assets/menu-images/poke-garden.webp",
+      "alt": "Поке «Гарден» — едамаме, авокадо, тофу і сезонні овочі",
+      "badges": [
+        {
+          "type": "new",
+          "label": "Новинка"
+        }
+      ],
+      "ingredients": [
+        "авокадо",
+        "едамаме",
+        "огірок",
+        "кунжут",
+        "водорості чука",
+        "рис",
+        "свіжі овочі"
+      ],
+      "nutrition": {
+        "kcal": 122,
+        "protein": 9.6,
+        "fat": 5,
+        "carbs": 12.6,
+        "allergens": "соя",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "supy-miso-klasychnyi",
+      "category": "supy",
+      "categoryName": "Супи",
+      "name": "Місо-суп класичний",
+      "desc": "Тофу, вакаме, місо-паста.",
+      "meta": "350 мл",
+      "price": 119,
+      "tag": "vege",
+      "rating": "4.8",
+      "votes": 118,
+      "img": "/assets/menu-images/supy-miso-klasychnyi.webp",
+      "alt": "Місо-суп класичний — тофу, вакаме, місо-паста",
+      "badges": [
+        {
+          "type": "hit",
+          "label": "Хіт"
+        }
+      ],
+      "ingredients": [
+        "тофу",
+        "місо-паста",
+        "вакаме"
+      ],
+      "nutrition": {
+        "kcal": 37,
+        "protein": 3,
+        "fat": 1.7,
+        "carbs": 3.4,
+        "allergens": "соя",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "supy-miso-losos",
+      "category": "supy",
+      "categoryName": "Супи",
+      "name": "Місо-суп з лососем",
+      "desc": "Класичний місо-бульйон зі шматочками лосося.",
+      "meta": "350 мл",
+      "price": 149,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 64,
+      "img": "/assets/menu-images/supy-miso-losos.webp",
+      "alt": "Місо-суп з лососем — класичний місо-бульйон зі шматочками лосося",
+      "badges": [],
+      "ingredients": [
+        "лосось",
+        "місо-паста",
+        "вакаме",
+        "тофу"
+      ],
+      "nutrition": {
+        "kcal": 37,
+        "protein": 3.1,
+        "fat": 1.8,
+        "carbs": 3.4,
+        "allergens": "риба",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "supy-krevetky",
+      "category": "supy",
+      "categoryName": "Супи",
+      "name": "Суп з креветками",
+      "desc": "Місо-бульйон з креветками і зеленою цибулею.",
+      "meta": "350 мл",
+      "price": 169,
+      "tag": "classic",
+      "rating": "4.7",
+      "votes": 37,
+      "img": "/assets/menu-images/supy-krevetky.webp",
+      "alt": "Суп з креветками — місо-бульйон з креветками і зеленою цибулею",
+      "badges": [],
+      "ingredients": [
+        "креветка",
+        "місо-паста",
+        "вакаме"
+      ],
+      "nutrition": {
+        "kcal": 39,
+        "protein": 4,
+        "fat": 2.1,
+        "carbs": 3.7,
+        "allergens": "ракоподібні",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "supy-miso-kurka",
+      "category": "supy",
+      "categoryName": "Супи",
+      "name": "Місо-суп з куркою",
+      "desc": "Місо-бульйон з куркою і тофу.",
+      "meta": "350 мл",
+      "price": 139,
+      "tag": "classic",
+      "rating": "4.7",
+      "votes": 22,
+      "img": "/assets/menu-images/supy-miso-kurka.webp",
+      "alt": "Місо-суп з куркою — місо-бульйон з куркою і тофу",
+      "badges": [],
+      "ingredients": [
+        "курка",
+        "тофу",
+        "місо-паста",
+        "вакаме"
+      ],
+      "nutrition": {
+        "kcal": 37,
+        "protein": 3.2,
+        "fat": 1.5,
+        "carbs": 2.8,
+        "allergens": "соя",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "supy-miso-podviina",
+      "category": "supy",
+      "categoryName": "Супи",
+      "name": "Місо-суп подвійна порція",
+      "desc": "Класичний місо-суп великою порцією — на двох.",
+      "meta": "700 мл",
+      "price": 219,
+      "tag": "vege",
+      "rating": "4.8",
+      "votes": 16,
+      "img": "/assets/menu-images/supy-miso-podviina.webp",
+      "alt": "Місо-суп подвійна порція — класичний місо-суп великою порцією — на двох",
+      "badges": [],
+      "ingredients": [
+        "місо-паста",
+        "вакаме",
+        "тофу"
+      ],
+      "nutrition": {
+        "kcal": 34,
+        "protein": 3.6,
+        "fat": 1.8,
+        "carbs": 3,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "deserty-moti-asorti",
+      "category": "deserty",
+      "categoryName": "Десерти",
+      "name": "Моті асорті",
+      "desc": "Мікс смаків моті — рисові кульки з м’якою начинкою.",
+      "meta": "5 шт · 180 г",
+      "price": 169,
+      "tag": "classic",
+      "rating": "4.9",
+      "votes": 87,
+      "img": "/assets/menu-images/deserty-moti-asorti.webp",
+      "alt": "Моті асорті — мікс смаків моті — рисові кульки з м’якою начинкою",
+      "badges": [
+        {
+          "type": "hit",
+          "label": "Хіт"
+        }
+      ],
+      "ingredients": [
+        "рис",
+        "рисове тісто моті"
+      ],
+      "nutrition": {
+        "kcal": 209,
+        "protein": 2.9,
+        "fat": 7.4,
+        "carbs": 26.3,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "deserty-chizkeik-matcha",
+      "category": "deserty",
+      "categoryName": "Десерти",
+      "name": "Чізкейк «Матча»",
+      "desc": "Чізкейк на основі зеленого чаю матча.",
+      "meta": "1 шматок · 110 г",
+      "price": 129,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 55,
+      "img": "/assets/menu-images/deserty-chizkeik-matcha.webp",
+      "alt": "Чізкейк «Матча» — чізкейк на основі зеленого чаю матча",
+      "badges": [],
+      "ingredients": [
+        "матча",
+        "вершковий сир",
+        "бісквітне тісто"
+      ],
+      "nutrition": {
+        "kcal": 270,
+        "protein": 3.9,
+        "fat": 10.6,
+        "carbs": 39.6,
+        "allergens": "молоко",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "deserty-roll-bananovyi",
+      "category": "deserty",
+      "categoryName": "Десерти",
+      "name": "Ролл банановий",
+      "desc": "Десертний рол з бананом і шоколадом.",
+      "meta": "8 шт · 140 г",
+      "price": 89,
+      "tag": "classic",
+      "rating": "4.7",
+      "votes": 43,
+      "img": "/assets/menu-images/deserty-roll-bananovyi.webp",
+      "alt": "Ролл банановий — десертний рол з бананом і шоколадом",
+      "badges": [],
+      "ingredients": [
+        "шоколад",
+        "банан",
+        "рис",
+        "кляр темпура",
+        "цукор"
+      ],
+      "nutrition": {
+        "kcal": 196,
+        "protein": 3,
+        "fat": 7.3,
+        "carbs": 27.7,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "deserty-moti-mango",
+      "category": "deserty",
+      "categoryName": "Десерти",
+      "name": "Моті манго",
+      "desc": "Моті з начинкою з манго.",
+      "meta": "3 шт · 120 г",
+      "price": 99,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 29,
+      "img": "/assets/menu-images/deserty-moti-mango.webp",
+      "alt": "Моті манго — моті з начинкою з манго",
+      "badges": [],
+      "ingredients": [
+        "манго",
+        "рисове тісто моті"
+      ],
+      "nutrition": {
+        "kcal": 263,
+        "protein": 4,
+        "fat": 10.6,
+        "carbs": 36.4,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "deserty-chizkeik-yudzu-laim",
+      "category": "deserty",
+      "categoryName": "Десерти",
+      "name": "Чізкейк «Юдзу-лайм»",
+      "desc": "Цитрусовий чізкейк з юдзу і лаймом.",
+      "meta": "1 шматок · 115 г",
+      "price": 139,
+      "tag": "classic",
+      "rating": "4.9",
+      "votes": 21,
+      "img": "/assets/menu-images/deserty-chizkeik-yudzu-laim.webp",
+      "alt": "Чізкейк «Юдзу-лайм» — цитрусовий чізкейк з юдзу і лаймом",
+      "badges": [
+        {
+          "type": "new",
+          "label": "Новинка"
+        }
+      ],
+      "ingredients": [
+        "лайм",
+        "юдзу",
+        "вершковий сир",
+        "бісквітне тісто"
+      ],
+      "nutrition": {
+        "kcal": 240,
+        "protein": 4.3,
+        "fat": 9.8,
+        "carbs": 32.8,
+        "allergens": "молоко",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "deserty-taiiaki-shokolad",
+      "category": "deserty",
+      "categoryName": "Десерти",
+      "name": "Тайякі з шоколадом",
+      "desc": "Японські вафлі-рибки з шоколадною начинкою.",
+      "meta": "2 шт · 130 г",
+      "price": 99,
+      "tag": "classic",
+      "rating": "4.7",
+      "votes": 18,
+      "img": "/assets/menu-images/deserty-taiiaki-shokolad.webp",
+      "alt": "Тайякі з шоколадом — японські вафлі-рибки з шоколадною начинкою",
+      "badges": [
+        {
+          "type": "new",
+          "label": "Новинка"
+        }
+      ],
+      "ingredients": [
+        "шоколад",
+        "бісквітне тісто"
+      ],
+      "nutrition": {
+        "kcal": 184,
+        "protein": 3.3,
+        "fat": 8.8,
+        "carbs": 26.6,
+        "allergens": "глютен",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "deserty-fondan-kunzhut",
+      "category": "deserty",
+      "categoryName": "Десерти",
+      "name": "Фондан з чорним кунжутом",
+      "desc": "Тепла шоколадна начинка з чорним кунжутом.",
+      "meta": "1 шт · 90 г",
+      "price": 149,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 14,
+      "img": "/assets/menu-images/deserty-fondan-kunzhut.webp",
+      "alt": "Фондан з чорним кунжутом — тепла шоколадна начинка з чорним кунжутом",
+      "badges": [],
+      "ingredients": [
+        "кунжут",
+        "шоколад"
+      ],
+      "nutrition": {
+        "kcal": 224,
+        "protein": 3.5,
+        "fat": 8.3,
+        "carbs": 30.6,
+        "allergens": "кунжут",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "salaty-chuka",
+      "category": "salaty",
+      "categoryName": "Салати",
+      "name": "Салат Чука",
+      "desc": "Морські водорості чука з кунжутом.",
+      "meta": "180 г",
+      "price": 129,
+      "tag": "vege",
+      "rating": "4.7",
+      "votes": 48,
+      "img": "/assets/menu-images/salaty-chuka.webp",
+      "alt": "Салат Чука — морські водорості чука з кунжутом",
+      "badges": [
+        {
+          "type": "vegan",
+          "label": "Вегетаріанське"
+        }
+      ],
+      "ingredients": [
+        "кунжут",
+        "водорості чука",
+        "морська сіль",
+        "свіжі овочі"
+      ],
+      "nutrition": {
+        "kcal": 85,
+        "protein": 4.6,
+        "fat": 3.8,
+        "carbs": 7.8,
+        "allergens": "кунжут",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "salaty-krab-ohirok",
+      "category": "salaty",
+      "categoryName": "Салати",
+      "name": "Салат з крабом і огірком",
+      "desc": "Крабові палички, огірок, легка заправка.",
+      "meta": "200 г",
+      "price": 139,
+      "tag": "classic",
+      "rating": "4.7",
+      "votes": 33,
+      "img": "/assets/menu-images/salaty-krab-ohirok.webp",
+      "alt": "Салат з крабом і огірком — крабові палички, огірок, легка заправка",
+      "badges": [],
+      "ingredients": [
+        "крабові палички",
+        "огірок",
+        "свіжі овочі",
+        "ікра тобіко",
+        "кунжут",
+        "спайсі-майонез"
+      ],
+      "nutrition": {
+        "kcal": 88,
+        "protein": 4.7,
+        "fat": 3.9,
+        "carbs": 7.8,
+        "allergens": "ракоподібні",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "salaty-soba-ovochi",
+      "category": "salaty",
+      "categoryName": "Салати",
+      "name": "Салат «Соба з овочами»",
+      "desc": "Гречана локшина соба зі свіжими овочами.",
+      "meta": "220 г",
+      "price": 149,
+      "tag": "vege",
+      "rating": "4.6",
+      "votes": 21,
+      "img": "/assets/menu-images/salaty-soba-ovochi.webp",
+      "alt": "Салат «Соба з овочами» — гречана локшина соба зі свіжими овочами",
+      "badges": [],
+      "ingredients": [
+        "локшина соба",
+        "свіжі овочі",
+        "едамаме",
+        "кунжут"
+      ],
+      "nutrition": {
+        "kcal": 116,
+        "protein": 5.6,
+        "fat": 5,
+        "carbs": 10.7,
+        "allergens": "глютен",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "salaty-edamame",
+      "category": "salaty",
+      "categoryName": "Салати",
+      "name": "Салат «Едамаме»",
+      "desc": "Соєві боби едамаме з морською сіллю.",
+      "meta": "150 г",
+      "price": 119,
+      "tag": "vege",
+      "rating": "4.8",
+      "votes": 27,
+      "img": "/assets/menu-images/salaty-edamame.webp",
+      "alt": "Салат «Едамаме» — соєві боби едамаме з морською сіллю",
+      "badges": [
+        {
+          "type": "vegan",
+          "label": "Вегетаріанське"
+        }
+      ],
+      "ingredients": [
+        "едамаме",
+        "морська сіль",
+        "свіжі овочі",
+        "огірок"
+      ],
+      "nutrition": {
+        "kcal": 99,
+        "protein": 5.8,
+        "fat": 4.6,
+        "carbs": 9.4,
+        "allergens": "соя",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "salaty-tunets-avokado",
+      "category": "salaty",
+      "categoryName": "Салати",
+      "name": "Салат з тунцем і авокадо",
+      "desc": "Свіжий тунець, авокадо, кунжутна заправка.",
+      "meta": "210 г",
+      "price": 169,
+      "tag": "classic",
+      "rating": "4.9",
+      "votes": 19,
+      "img": "/assets/menu-images/salaty-tunets-avokado.webp",
+      "alt": "Салат з тунцем і авокадо — свіжий тунець, авокадо, кунжутна заправка",
+      "badges": [
+        {
+          "type": "new",
+          "label": "Новинка"
+        }
+      ],
+      "ingredients": [
+        "тунець",
+        "авокадо",
+        "кунжут",
+        "свіжі овочі"
+      ],
+      "nutrition": {
+        "kcal": 113,
+        "protein": 6.1,
+        "fat": 5.1,
+        "carbs": 9.8,
+        "allergens": "риба, кунжут",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "zakusky-hyoza-kurka",
+      "category": "zakusky",
+      "categoryName": "Гарячі закуски",
+      "name": "Гьоза з куркою",
+      "desc": "Смажені пельмені гьоза з курячою начинкою.",
+      "meta": "6 шт · 150 г",
+      "price": 149,
+      "tag": "hot",
+      "rating": "4.8",
+      "votes": 62,
+      "img": "/assets/menu-images/zakusky-hyoza-kurka.webp",
+      "alt": "Гьоза з куркою — смажені пельмені гьоза з курячою начинкою",
+      "badges": [
+        {
+          "type": "hit",
+          "label": "Хіт"
+        }
+      ],
+      "ingredients": [
+        "курка",
+        "тісто",
+        "соєвий соус"
+      ],
+      "nutrition": {
+        "kcal": 209,
+        "protein": 10.3,
+        "fat": 11.1,
+        "carbs": 20.1,
+        "allergens": "глютен",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "zakusky-kryltsia-teriiaki",
+      "category": "zakusky",
+      "categoryName": "Гарячі закуски",
+      "name": "Крильця теріякі",
+      "desc": "Курячі крильця в соусі теріякі.",
+      "meta": "8 шт · 240 г",
+      "price": 169,
+      "tag": "hot",
+      "rating": "4.7",
+      "votes": 41,
+      "img": "/assets/menu-images/zakusky-kryltsia-teriiaki.webp",
+      "alt": "Крильця теріякі — курячі крильця в соусі теріякі",
+      "badges": [],
+      "ingredients": [
+        "курячі крильця",
+        "соус теріякі",
+        "кунжут"
+      ],
+      "nutrition": {
+        "kcal": 198,
+        "protein": 10.9,
+        "fat": 11.1,
+        "carbs": 17.7,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "zakusky-spicy-krab-krokety",
+      "category": "zakusky",
+      "categoryName": "Гарячі закуски",
+      "name": "Спайсі краб-крокети",
+      "desc": "Хрусткі крокети з крабом під гострим соусом.",
+      "meta": "4 шт · 180 г",
+      "price": 159,
+      "tag": "spicy",
+      "rating": "4.7",
+      "votes": 26,
+      "img": "/assets/menu-images/zakusky-spicy-krab-krokety.webp",
+      "alt": "Спайсі краб-крокети — хрусткі крокети з крабом під гострим соусом",
+      "badges": [
+        {
+          "type": "spicy",
+          "label": "Гостро"
+        }
+      ],
+      "ingredients": [
+        "крабові палички",
+        "гострий соус",
+        "крабова начинка"
+      ],
+      "nutrition": {
+        "kcal": 217,
+        "protein": 9.4,
+        "fat": 9.9,
+        "carbs": 19.2,
+        "allergens": "ракоподібні, глютен",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "zakusky-edamame-sil",
+      "category": "zakusky",
+      "categoryName": "Гарячі закуски",
+      "name": "Едамаме з морською сіллю",
+      "desc": "Соєві боби на парі з морською сіллю.",
+      "meta": "150 г",
+      "price": 119,
+      "tag": "vege",
+      "rating": "4.8",
+      "votes": 34,
+      "img": "/assets/menu-images/zakusky-edamame-sil.webp",
+      "alt": "Едамаме з морською сіллю — соєві боби на парі з морською сіллю",
+      "badges": [
+        {
+          "type": "vegan",
+          "label": "Вегетаріанське"
+        }
+      ],
+      "ingredients": [
+        "едамаме",
+        "морська сіль"
+      ],
+      "nutrition": {
+        "kcal": 183,
+        "protein": 7.2,
+        "fat": 8.7,
+        "carbs": 16,
+        "allergens": "соя",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "zakusky-rysovi-kulky-losos",
+      "category": "zakusky",
+      "categoryName": "Гарячі закуски",
+      "name": "Хрусткі рисові кульки з лососем",
+      "desc": "Обсмажені рисові кульки з начинкою з лосося.",
+      "meta": "3 шт · 160 г",
+      "price": 179,
+      "tag": "hot",
+      "rating": "4.8",
+      "votes": 18,
+      "img": "/assets/menu-images/zakusky-rysovi-kulky-losos.webp",
+      "alt": "Хрусткі рисові кульки з лососем — обсмажені рисові кульки з начинкою з лосося",
+      "badges": [
+        {
+          "type": "new",
+          "label": "Новинка"
+        }
+      ],
+      "ingredients": [
+        "лосось",
+        "рис",
+        "кляр темпура",
+        "спайсі-майонез",
+        "кунжут"
+      ],
+      "nutrition": {
+        "kcal": 153,
+        "protein": 8.8,
+        "fat": 8.6,
+        "carbs": 14.8,
+        "allergens": "риба",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "zakusky-onihiri",
+      "category": "zakusky",
+      "categoryName": "Гарячі закуски",
+      "name": "Смажені онігірі",
+      "desc": "Обсмажені рисові трикутники з начинкою на вибір.",
+      "meta": "3 шт · 140 г",
+      "price": 149,
+      "tag": "hot",
+      "rating": "4.6",
+      "votes": 15,
+      "img": "/assets/menu-images/zakusky-onihiri.webp",
+      "alt": "Смажені онігірі — обсмажені рисові трикутники з начинкою на вибір",
+      "badges": [],
+      "ingredients": [
+        "рис",
+        "норі",
+        "кунжут",
+        "соєвий соус"
+      ],
+      "nutrition": {
+        "kcal": 194,
+        "protein": 7,
+        "fat": 8.6,
+        "carbs": 14.8,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "napoi-chai-sencha",
+      "category": "napoi",
+      "categoryName": "Напої",
+      "name": "Зелений чай сенча",
+      "desc": "Чайник японського зеленого чаю сенча.",
+      "meta": "чайник · 400 мл",
+      "price": 45,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 39,
+      "img": "/assets/menu-images/napoi-chai-sencha.webp",
+      "alt": "Зелений чай сенча — чайник японського зеленого чаю сенча",
+      "badges": [],
+      "ingredients": [
+        "зелений чай"
+      ],
+      "nutrition": {
+        "kcal": 1,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 0.3,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "napoi-chai-ulun",
+      "category": "napoi",
+      "categoryName": "Напої",
+      "name": "Чай улун",
+      "desc": "Чайник напівферментованого чаю улун.",
+      "meta": "чайник · 400 мл",
+      "price": 55,
+      "tag": "classic",
+      "rating": "4.7",
+      "votes": 24,
+      "img": "/assets/menu-images/napoi-chai-ulun.webp",
+      "alt": "Чай улун — чайник напівферментованого чаю улун",
+      "badges": [],
+      "ingredients": [
+        "чай улун"
+      ],
+      "nutrition": {
+        "kcal": 1,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 0.2,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "napoi-matcha-latte",
+      "category": "napoi",
+      "categoryName": "Напої",
+      "name": "Матча-латте",
+      "desc": "Латте на основі японського зеленого чаю матча.",
+      "meta": "350 мл",
+      "price": 89,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 33,
+      "img": "/assets/menu-images/napoi-matcha-latte.webp",
+      "alt": "Матча-латте — латте на основі японського зеленого чаю матча",
+      "badges": [
+        {
+          "type": "new",
+          "label": "Новинка"
+        }
+      ],
+      "ingredients": [
+        "матча"
+      ],
+      "nutrition": {
+        "kcal": 45,
+        "protein": 2.5,
+        "fat": 2,
+        "carbs": 4.5,
+        "allergens": "молоко",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "napoi-voda-nehazovana",
+      "category": "napoi",
+      "categoryName": "Напої",
+      "name": "Вода негазована",
+      "desc": "Питна вода без газу.",
+      "meta": "0,5 л",
+      "price": 35,
+      "tag": "classic",
+      "rating": "4.9",
+      "votes": 21,
+      "img": "/assets/menu-images/napoi-voda-nehazovana.webp",
+      "alt": "Вода негазована — питна вода без газу",
+      "badges": [],
+      "ingredients": [
+        "питна вода"
+      ],
+      "nutrition": {
+        "kcal": 0,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 0,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "napoi-voda-hazovana",
+      "category": "napoi",
+      "categoryName": "Напої",
+      "name": "Вода газована",
+      "desc": "Питна вода з газом.",
+      "meta": "0,5 л",
+      "price": 35,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 17,
+      "img": "/assets/menu-images/napoi-voda-hazovana.webp",
+      "alt": "Вода газована — питна вода з газом",
+      "badges": [],
+      "ingredients": [
+        "питна вода"
+      ],
+      "nutrition": {
+        "kcal": 0,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 0,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "napoi-kompot",
+      "category": "napoi",
+      "categoryName": "Напої",
+      "name": "Домашній компот",
+      "desc": "Компот із сезонних фруктів власного приготування.",
+      "meta": "350 мл",
+      "price": 55,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 28,
+      "img": "/assets/menu-images/napoi-kompot.webp",
+      "alt": "Домашній компот — компот із сезонних фруктів власного приготування",
+      "badges": [],
+      "ingredients": [
+        "фрукти"
+      ],
+      "nutrition": {
+        "kcal": 45,
+        "protein": 0.1,
+        "fat": 0,
+        "carbs": 11,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "napoi-lymonad-yudzu-imbyr",
+      "category": "napoi",
+      "categoryName": "Напої",
+      "name": "Лимонад «Юдзу-імбир»",
+      "desc": "Домашній лимонад з юдзу та імбиром.",
+      "meta": "350 мл",
+      "price": 69,
+      "tag": "new",
+      "rating": "4.9",
+      "votes": 22,
+      "img": "/assets/menu-images/napoi-lymonad-yudzu-imbyr.webp",
+      "alt": "Лимонад «Юдзу-імбир» — домашній лимонад з юдзу та імбиром",
+      "badges": [
+        {
+          "type": "new",
+          "label": "Новинка"
+        }
+      ],
+      "ingredients": [
+        "юдзу",
+        "імбир"
+      ],
+      "nutrition": {
+        "kcal": 38,
+        "protein": 0.1,
+        "fat": 0,
+        "carbs": 9.2,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "napoi-cola-sprite",
+      "category": "napoi",
+      "categoryName": "Напої",
+      "name": "Coca-Cola / Sprite",
+      "desc": "Газований напій на вибір, 0,33 л.",
+      "meta": "0,33 л",
+      "price": 45,
+      "tag": "classic",
+      "rating": "4.7",
+      "votes": 31,
+      "img": "/assets/menu-images/napoi-cola-sprite.webp",
+      "alt": "Coca-Cola / Sprite — газований напій на вибір, 0,33 л",
+      "badges": [],
+      "ingredients": [
+        "газована вода",
+        "цукор"
+      ],
+      "nutrition": {
+        "kcal": 42,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 10.6,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "napoi-sik",
+      "category": "napoi",
+      "categoryName": "Напої",
+      "name": "Сік яблучний / апельсиновий",
+      "desc": "Свіжий сік на вибір, 0,3 л.",
+      "meta": "0,3 л",
+      "price": 59,
+      "tag": "classic",
+      "rating": "4.7",
+      "votes": 19,
+      "img": "/assets/menu-images/napoi-sik.webp",
+      "alt": "Сік яблучний / апельсиновий — свіжий сік на вибір, 0,3 л",
+      "badges": [],
+      "ingredients": [
+        "фруктовий сік"
+      ],
+      "nutrition": {
+        "kcal": 46,
+        "protein": 0.3,
+        "fat": 0.1,
+        "carbs": 10.8,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "sousy-soievyi",
+      "category": "sousy",
+      "categoryName": "Соуси",
+      "name": "Соєвий соус",
+      "desc": "Класичний соєвий соус, додаткова порція.",
+      "meta": "50 мл",
+      "price": 25,
+      "tag": "classic",
+      "rating": "4.9",
+      "votes": 54,
+      "img": "/assets/menu-images/sousy-soievyi.webp",
+      "alt": "Соєвий соус — класичний соєвий соус, додаткова порція",
+      "badges": [],
+      "ingredients": [
+        "соєвий соус"
+      ],
+      "nutrition": {
+        "kcal": 53,
+        "protein": 5.6,
+        "fat": 0,
+        "carbs": 5.6,
+        "allergens": "соя",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "sousy-unahi",
+      "category": "sousy",
+      "categoryName": "Соуси",
+      "name": "Соус унагі",
+      "desc": "Солодкий соус унагі для запечених ролів.",
+      "meta": "40 мл",
+      "price": 35,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 31,
+      "img": "/assets/menu-images/sousy-unahi.webp",
+      "alt": "Соус унагі — солодкий соус унагі для запечених ролів",
+      "badges": [],
+      "ingredients": [
+        "соус унагі"
+      ],
+      "nutrition": {
+        "kcal": 150,
+        "protein": 2,
+        "fat": 0.2,
+        "carbs": 35,
+        "allergens": "риба",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "sousy-spicy-maionez",
+      "category": "sousy",
+      "categoryName": "Соуси",
+      "name": "Спайсі майонез",
+      "desc": "Гострий майонез на основі чилі.",
+      "meta": "40 мл",
+      "price": 35,
+      "tag": "spicy",
+      "rating": "4.8",
+      "votes": 28,
+      "img": "/assets/menu-images/sousy-spicy-maionez.webp",
+      "alt": "Спайсі майонез — гострий майонез на основі чилі",
+      "badges": [],
+      "ingredients": [
+        "гострий соус",
+        "спайсі-майонез"
+      ],
+      "nutrition": {
+        "kcal": 420,
+        "protein": 1.5,
+        "fat": 44,
+        "carbs": 4,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "sousy-vasabi",
+      "category": "sousy",
+      "categoryName": "Соуси",
+      "name": "Васабі",
+      "desc": "Додаткова порція васабі.",
+      "meta": "15 г",
+      "price": 25,
+      "tag": "spicy",
+      "rating": "4.7",
+      "votes": 19,
+      "img": "/assets/menu-images/sousy-vasabi.webp",
+      "alt": "Васабі — додаткова порція васабі",
+      "badges": [],
+      "ingredients": [
+        "васабі"
+      ],
+      "nutrition": {
+        "kcal": 90,
+        "protein": 2,
+        "fat": 0.6,
+        "carbs": 18,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "sousy-imbyr",
+      "category": "sousy",
+      "categoryName": "Соуси",
+      "name": "Імбир маринований",
+      "desc": "Додаткова порція маринованого імбиру.",
+      "meta": "30 г",
+      "price": 25,
+      "tag": "classic",
+      "rating": "4.7",
+      "votes": 17,
+      "img": "/assets/menu-images/sousy-imbyr.webp",
+      "alt": "Імбир маринований — додаткова порція маринованого імбиру",
+      "badges": [],
+      "ingredients": [
+        "імбир"
+      ],
+      "nutrition": {
+        "kcal": 65,
+        "protein": 0.2,
+        "fat": 0.1,
+        "carbs": 15,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "sousy-kunzhutnyi",
+      "category": "sousy",
+      "categoryName": "Соуси",
+      "name": "Кунжутний соус",
+      "desc": "Кремовий соус на основі кунжуту.",
+      "meta": "40 мл",
+      "price": 35,
+      "tag": "classic",
+      "rating": "4.8",
+      "votes": 14,
+      "img": "/assets/menu-images/sousy-kunzhutnyi.webp",
+      "alt": "Кунжутний соус — кремовий соус на основі кунжуту",
+      "badges": [],
+      "ingredients": [
+        "кунжут"
+      ],
+      "nutrition": {
+        "kcal": 310,
+        "protein": 4,
+        "fat": 28,
+        "carbs": 10,
+        "allergens": "кунжут",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    },
+    {
+      "id": "sousy-chili-manho",
+      "category": "sousy",
+      "categoryName": "Соуси",
+      "name": "Соус чилі-манго",
+      "desc": "Солодко-гострий соус з чилі та манго.",
+      "meta": "40 мл",
+      "price": 39,
+      "tag": "spicy",
+      "rating": "4.8",
+      "votes": 12,
+      "img": "/assets/menu-images/sousy-chili-manho.webp",
+      "alt": "Соус чилі-манго — солодко-гострий соус з чилі та манго",
+      "badges": [
+        {
+          "type": "new",
+          "label": "Новинка"
+        }
+      ],
+      "ingredients": [
+        "манго",
+        "гострий соус"
+      ],
+      "nutrition": {
+        "kcal": 140,
+        "protein": 0.5,
+        "fat": 0.2,
+        "carbs": 33,
+        "allergens": "без основних алергенів",
+        "note": "демо-дані з product-details.js — перевірити перед публікацією"
+      },
+      "seoText": ""
+    }
+  ]
+}

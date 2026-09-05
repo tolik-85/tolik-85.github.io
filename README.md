@@ -39,7 +39,11 @@ site/
 │       └── article.json         ← Schema.org BlogPosting для статті блогу
 │
 ├── build/
-│   └── build.js                 ← скрипт збірки (Node.js, без залежностей)
+│   ├── build.js                 ← скрипт збірки (Node.js, без залежностей)
+│   ├── generate-product-pages.js ← каркас генератора сторінок страв із src/data/products.json (див. коментар у файлі)
+│   └── gsc-export.js            ← щотижнева вигрузка Search Console у seo-data/
+│
+├── src/data/products.json       ← єдина база страв (картки + КБЖУ); джерело для генератора сторінок страв
 │
 ├── assets/
 │   ├── css/                     ← стилі, ОКРЕМИЙ файл на кожен розділ
