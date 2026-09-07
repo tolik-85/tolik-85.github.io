@@ -1,0 +1,28 @@
+{
+  "site": "https://pandasushi.od.ua/",
+  "startDate": "2026-08-29",
+  "endDate": "2026-09-04",
+  "exportedAt": "2026-09-07T09:55:45.342Z",
+  "slices": {
+    "queries": {
+      "rows": 147,
+      "clicks": 9,
+      "impressions": 493
+    },
+    "pages": {
+      "rows": 17,
+      "clicks": 16,
+      "impressions": 1165
+    },
+    "query-page": {
+      "rows": 174,
+      "clicks": 9,
+      "impressions": 513
+    },
+    "dates": {
+      "rows": 7,
+      "clicks": 16,
+      "impressions": 1095
+    }
+  }
+}
